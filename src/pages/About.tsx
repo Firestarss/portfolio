@@ -1,13 +1,14 @@
-
 import { motion } from "framer-motion";
+import { fadeInAnimation } from "@/lib/utils";
 
 const About = () => {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
+    <motion.main
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={fadeInAnimation}
+      transition={fadeInAnimation.transition}
       className="max-w-4xl mx-auto"
     >
       <section className="mb-12">
@@ -122,7 +123,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </motion.div>
+    </motion.main>
   );
 };
 

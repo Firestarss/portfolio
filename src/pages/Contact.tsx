@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { fadeInAnimation } from "@/lib/utils";
 
 const Contact = () => {
   const [formSuccess, setFormSuccess] = useState(false);
@@ -31,11 +31,12 @@ const Contact = () => {
   };
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
+    <motion.main
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={fadeInAnimation}
+      transition={fadeInAnimation.transition}
       className="max-w-5xl mx-auto"
     >
       <h1 className="text-3xl md:text-4xl font-bold mb-2">Contact</h1>
@@ -117,7 +118,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.main>
   );
 };
 
