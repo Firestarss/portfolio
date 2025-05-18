@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -12,7 +11,8 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
+    honeypot: "" // added honeypot field
   });
   const [errors, setErrors] = useState({
     name: "",
@@ -30,9 +30,8 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
       ...prev,
       [name]: value
     }));
-    
-    // Clear error when typing
-    if (errors[name as keyof typeof errors]) {
+
+    if (name in errors && errors[name as keyof typeof errors]) {
       setErrors((prev) => ({
         ...prev,
         [name]: ""
@@ -78,23 +77,47 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    if (!validateForm()) {
+
+    if (!validateForm()) return;
+
+    // Block spam bots that fill the hidden field
+    if (formData.honeypot) {
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Since we're not using a real backend, we'll just simulate success
-      onSuccess();
-      toast({
-        title: "Message sent",
-        description: "Thank you for your message. I'll get back to you soon!",
+      const response = await fetch("https://formspree.io/f/mzzrookl", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
       });
+
+      if (response.ok) {
+        onSuccess();
+        toast({
+          title: "Message sent",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          honeypot: ""
+        });
+      } else {
+        throw new Error("Submission failed");
+      }
     } catch (error) {
       toast({
         title: "Something went wrong",
@@ -108,14 +131,27 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Honeypot field — hidden from users but visible to bots */}
+      <div style={{ display: "none" }}>
+        <label>
+          Don’t fill this out:  
+          <input
+            name="honeypot"
+            value={formData.honeypot}
+            onChange={handleChange}
+            autoComplete="off"
+          />
+        </label>
+      </div>
+
       <div>
         <label htmlFor="name" className="block mb-2 text-sm font-medium">
           Name
         </label>
         <input
+          name="name"
           type="text"
           id="name"
-          name="name"
           value={formData.name}
           onChange={handleChange}
           className="w-full px-4 py-2 border rounded-md bg-background border-input focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -131,9 +167,9 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
           Email
         </label>
         <input
+          name="email"
           type="email"
           id="email"
-          name="email"
           value={formData.email}
           onChange={handleChange}
           className="w-full px-4 py-2 border rounded-md bg-background border-input focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -149,9 +185,9 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
           Subject
         </label>
         <input
+          name="subject"
           type="text"
           id="subject"
-          name="subject"
           value={formData.subject}
           onChange={handleChange}
           className="w-full px-4 py-2 border rounded-md bg-background border-input focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -167,8 +203,8 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
           Message
         </label>
         <textarea
-          id="message"
           name="message"
+          id="message"
           value={formData.message}
           onChange={handleChange}
           rows={5}
@@ -192,3 +228,4 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
 };
 
 export default ContactForm;
+
