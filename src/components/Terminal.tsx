@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Command, X } from 'lucide-react';
@@ -8,7 +7,9 @@ import { projects } from "@/data/projects";
 const Terminal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
-  const [output, setOutput] = useState<string[]>(['Welcome to Florian\'s terminal. Type "help" for available commands.']);
+  const [output, setOutput] = useState<string[]>([
+    "Welcome to Florian's terminal. Type \"help\" for available commands.",
+  ]);
   const inputRef = useRef<HTMLInputElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -16,13 +17,10 @@ const Terminal = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Ctrl + ` to toggle terminal
       if (e.ctrlKey && e.key === '`') {
         e.preventDefault();
         toggleTerminal();
       }
-      
-      // Escape to close terminal
       if (e.key === 'Escape' && isOpen) {
         e.preventDefault();
         setIsOpen(false);
@@ -34,12 +32,9 @@ const Terminal = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    // Focus the input when terminal is opened
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
     }
-    
-    // Scroll to bottom of output
     if (outputRef.current) {
       outputRef.current.scrollTop = outputRef.current.scrollHeight;
     }
@@ -56,21 +51,28 @@ const Terminal = () => {
 
   const processCommand = (cmd: string) => {
     const lowercaseCmd = cmd.toLowerCase().trim();
-    
-    if (!lowercaseCmd) {
-      return '';
-    }
-    
+    if (!lowercaseCmd) return '';
+
     if (lowercaseCmd === 'help') {
-      return `Available commands:
-- help: Show this help message
-- about: View about information
-- projects: List all projects
-- list-projects: List all project titles
-- contact: Go to contact page
-- resume: View resume
-- clear: Clear terminal
-- exit: Close terminal`;
+      const helpCommands = {
+        help: "Show this help message",
+        about: "View about information",
+        projects: "List all projects",
+        "list-projects": "List all project titles",
+        contact: "Go to contact page",
+        resume: "View resume",
+        clear: "Clear terminal",
+        exit: "Close terminal",
+      };
+
+      const longestCmdLength = Math.max(...Object.keys(helpCommands).map(cmd => cmd.length));
+
+      return [
+        "Available commands:",
+        ...Object.entries(helpCommands).map(([cmd, desc]) =>
+          `- ${cmd.padEnd(longestCmdLength)} : ${desc}`
+        ),
+      ].join('\n');
     } else if (lowercaseCmd === 'about') {
       navigate('/');
       return 'Navigating to About page...';
@@ -90,7 +92,6 @@ const Terminal = () => {
       navigate('/resume');
       return 'Navigating to Resume page...';
     } else if (lowercaseCmd === 'clear') {
-      // Return special value to trigger clearing
       return '__CLEAR__';
     } else if (lowercaseCmd === 'exit') {
       setIsOpen(false);
@@ -104,15 +105,14 @@ const Terminal = () => {
     e.preventDefault();
     const newOutput = [...output, `> ${input}`];
     const result = processCommand(input);
-    
+
     if (result === '__CLEAR__') {
-      // Clear the terminal output
       setOutput([]);
     } else if (result) {
       newOutput.push(result);
       setOutput(newOutput);
     }
-    
+
     setInput('');
   };
 
@@ -132,21 +132,23 @@ const Terminal = () => {
               <X size={16} />
             </button>
           </div>
-          
+
           <div 
             ref={outputRef}
-            className="p-4 h-80 overflow-y-auto font-mono text-sm"
+            className="p-4 h-80 overflow-y-auto font-mono text-sm whitespace-pre-wrap"
           >
-            {output.map((line, i) => (
-              <div 
-                key={i} 
-                className={`mb-1 ${line.startsWith('>') ? 'text-primary' : 'text-foreground'}`}
-              >
-                {line}
-              </div>
-            ))}
+            {output.flatMap((line, i) =>
+              line.split('\n').map((subLine, j) => (
+                <div
+                  key={`${i}-${j}`}
+                  className={`mb-1 ${subLine.startsWith('>') ? 'text-primary' : 'text-foreground'}`}
+                >
+                  {subLine}
+                </div>
+              ))
+            )}
           </div>
-          
+
           <form onSubmit={handleSubmit} className="border-t border-border p-2">
             <div className="flex items-center">
               <span className="text-primary mr-2">{'>'}</span>
@@ -170,3 +172,4 @@ const Terminal = () => {
 };
 
 export { Terminal };
+
