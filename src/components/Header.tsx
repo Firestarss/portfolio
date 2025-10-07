@@ -1,20 +1,34 @@
 
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Terminal } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+  
+  const openTerminal = () => {
+    window.dispatchEvent(new CustomEvent('open-terminal'));
+  };
 
   return (
     <header className="bg-background border-b border-border py-4 sticky top-0 z-10">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-foreground transition-colors hover:text-primary">
-          Florian<span className="text-primary">.</span>
-        </Link>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={openTerminal}
+            className="p-2 rounded-md hover:bg-muted/50 hover:text-primary transition-colors"
+            aria-label="Open terminal"
+            title="Open Terminal (Ctrl+`)"
+          >
+            <Terminal size={20} />
+          </button>
+          <Link to="/" className="text-2xl font-bold text-foreground transition-colors hover:text-primary">
+            Florian<span className="text-primary">.</span>
+          </Link>
+        </div>
 
         {/* Mobile menu button */}
         <button 
@@ -26,11 +40,11 @@ const Header = () => {
         </button>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 items-center">
           <NavLink 
             to="/" 
             className={({isActive}) => 
-              `hover:text-primary transition-colors ${isActive ? "text-primary font-medium" : "text-foreground"}`
+              `text-base font-semibold hover:text-primary transition-colors ${isActive ? "text-primary" : "text-foreground"}`
             }
             end
           >
@@ -39,7 +53,7 @@ const Header = () => {
           <NavLink 
             to="/projects" 
             className={({isActive}) => 
-              `hover:text-primary transition-colors ${isActive ? "text-primary font-medium" : "text-foreground"}`
+              `text-base font-semibold hover:text-primary transition-colors ${isActive ? "text-primary" : "text-foreground"}`
             }
           >
             Projects
@@ -47,7 +61,7 @@ const Header = () => {
           <NavLink 
             to="/resume" 
             className={({isActive}) => 
-              `hover:text-primary transition-colors ${isActive ? "text-primary font-medium" : "text-foreground"}`
+              `text-base font-semibold hover:text-primary transition-colors ${isActive ? "text-primary" : "text-foreground"}`
             }
           >
             Resume
@@ -55,7 +69,7 @@ const Header = () => {
           <NavLink 
             to="/contact" 
             className={({isActive}) => 
-              `hover:text-primary transition-colors ${isActive ? "text-primary font-medium" : "text-foreground"}`
+              `text-base font-semibold hover:text-primary transition-colors ${isActive ? "text-primary" : "text-foreground"}`
             }
           >
             Contact
@@ -71,7 +85,7 @@ const Header = () => {
               to="/" 
               onClick={closeMenu}
               className={({isActive}) => 
-                `block py-2 px-4 hover:bg-muted/50 rounded-md transition-colors ${isActive ? "text-primary font-medium" : "text-foreground"}`
+                `block py-2 px-4 text-base font-semibold hover:bg-muted/50 rounded-md transition-colors ${isActive ? "text-primary" : "text-foreground"}`
               }
               end
             >
@@ -81,7 +95,7 @@ const Header = () => {
               to="/projects" 
               onClick={closeMenu}
               className={({isActive}) => 
-                `block py-2 px-4 hover:bg-muted/50 rounded-md transition-colors ${isActive ? "text-primary font-medium" : "text-foreground"}`
+                `block py-2 px-4 text-base font-semibold hover:bg-muted/50 rounded-md transition-colors ${isActive ? "text-primary" : "text-foreground"}`
               }
             >
               Projects
@@ -90,7 +104,7 @@ const Header = () => {
               to="/resume" 
               onClick={closeMenu}
               className={({isActive}) => 
-                `block py-2 px-4 hover:bg-muted/50 rounded-md transition-colors ${isActive ? "text-primary font-medium" : "text-foreground"}`
+                `block py-2 px-4 text-base font-semibold hover:bg-muted/50 rounded-md transition-colors ${isActive ? "text-primary" : "text-foreground"}`
               }
             >
               Resume
@@ -99,7 +113,7 @@ const Header = () => {
               to="/contact" 
               onClick={closeMenu}
               className={({isActive}) => 
-                `block py-2 px-4 hover:bg-muted/50 rounded-md transition-colors ${isActive ? "text-primary font-medium" : "text-foreground"}`
+                `block py-2 px-4 text-base font-semibold hover:bg-muted/50 rounded-md transition-colors ${isActive ? "text-primary" : "text-foreground"}`
               }
             >
               Contact
