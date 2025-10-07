@@ -17,6 +17,10 @@ export interface Project {
   keyFeatures?: string;
   lessonsLearned?: string;
   techStack?: string[]; // Optional array of technologies used
+  
+  // Visibility controls
+  showInProjects?: boolean; // If false, hidden from Projects page (defaults to true)
+  showInTerminal?: boolean; // If false, hidden from terminal sub-projects (defaults to true)
 }
 export const projects: Project[] = [
   {
@@ -25,6 +29,7 @@ export const projects: Project[] = [
     description: "An autonomous robotic system capable of solving a standard 3x3 Rubik's Cube in under 10 seconds using computer vision and advanced solving algorithms.",
     image: getProjectImage("rubiks-cube-robot", "hero.jpg"),
     tags: ["Computer Vision", "Robotics", "OpenCV", "Python", "ROS", "Machine Learning"],
+    techStack: ["Python", "OpenCV", "ROS", "Arduino", "NumPy", "Kociemba Algorithm", "HSV Color Space"],
     content: `# Rubik's Cube Robot - Markdown Feature Showcase
 
 This project description demonstrates **every markdown feature** supported by react-markdown.
