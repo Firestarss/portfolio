@@ -17,7 +17,24 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://yourdomain.com/assets/portfolio-og.png" />
 
-  <script type="module" crossorigin src="/portfolio/assets/index-CNTDFp65.js"></script>
+    <!-- GitHub Pages SPA redirect script -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+
+  <script type="module" crossorigin src="/portfolio/assets/index-qFQJ2ivu.js"></script>
   <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BH9fWYyt.css">
 
   <body>
