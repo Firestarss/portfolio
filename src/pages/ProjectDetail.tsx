@@ -45,16 +45,6 @@ const ProjectDetail = () => {
   }, [id]);
   
   if (!project) {
-    const projectQuotes = [
-      "This project must've been left in the prototype bin...",
-      "Looks like this project file got corrupted.",
-      "My database search came up empty on this one.",
-      "This project ID doesn't match any records in my archives.",
-      "I've scanned all project folders—nothing here!",
-    ];
-
-    const randomQuote = projectQuotes[Math.floor(Math.random() * projectQuotes.length)];
-
     return (
       <div className="min-h-[60vh] flex items-center justify-center px-4">
         <motion.div 
@@ -82,23 +72,19 @@ const ProjectDetail = () => {
             Can't Find That Project
           </p>
           
-          <p className="text-lg text-muted-foreground mb-8 italic">
-            "{randomQuote}"
-          </p>
-          
           <p className="text-muted-foreground mb-8">
             The project you're searching for might have been moved, deleted, or never existed. 
             Let's explore what's actually in the workshop.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild variant="hero" size="lg">
+            <Button asChild variant="hero" size="lg" className="text-base">
               <Link to="/projects">
                 <FolderOpen size={18} className="mr-2" />
                 Browse All Projects
               </Link>
             </Button>
-            <Button asChild variant="hero-outline" size="lg">
+            <Button asChild variant="hero-outline" size="lg" className="text-base">
               <Link to="/">
                 <Home size={18} className="mr-2" />
                 Back to Home
