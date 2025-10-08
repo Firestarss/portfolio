@@ -16,7 +16,16 @@ const Projects = () => {
   const allTags = Array.from(new Set(visibleProjects.flatMap(p => p.tags))).sort();
 
   const goToRandomProject = () => {
-    const randomProject = visibleProjects[Math.floor(Math.random() * visibleProjects.length)];
+    const randomEligibleProjects = projects.filter(p => {
+      if (p.showInRandomButton !== undefined) {
+        return p.showInRandomButton;
+      }
+      return p.showInProjects !== false;
+    });
+    
+    if (randomEligibleProjects.length === 0) return;
+    
+    const randomProject = randomEligibleProjects[Math.floor(Math.random() * randomEligibleProjects.length)];
     navigate(`/projects/${randomProject.id}`);
   };
 
