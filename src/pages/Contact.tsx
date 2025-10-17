@@ -5,7 +5,7 @@ import ContactForm from "../components/ContactForm";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { fadeInAnimation } from "@/lib/utils";
-import { getProfileImage } from "@/lib/images";
+import { getProfileImage } from "@/lib/files";
 
 const Contact = () => {
   const [formSuccess, setFormSuccess] = useState(false);
@@ -15,7 +15,7 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: <Github size={20} />,
-      url: "https://github.com/Firestarss",
+      url: "https://www.github.com/Firestarss",
     },
     {
       name: "LinkedIn",
@@ -42,14 +42,24 @@ const Contact = () => {
       transition={fadeInAnimation.transition}
       className="max-w-5xl mx-auto"
     >
-      <h1 className="text-3xl md:text-4xl font-bold mb-2">Contact</h1>
-      <p className="text-muted-foreground mb-10">
-        Let's connect! Feel free to reach out via the form below or through social media.
-      </p>
-
-      <div className="grid md:grid-cols-2 gap-10">
+      {/* Professional Headshot Hero Section */}
+      <div className="flex items-center gap-6 mb-8">
+        <Avatar className="h-32 w-32 border-4 border-primary shadow-xl flex-shrink-0">
+          <AvatarImage src={getProfileImage("avatar.jpg")} alt="Florian Schwarzinger - Headshot" />
+          <AvatarFallback>FS</AvatarFallback>
+        </Avatar>
         <div>
-          <h2 className="text-xl font-bold mb-6 inline-block border-b-2 border-primary pb-2">Get in Touch</h2>
+          <h1 className="text-3xl md:text-4xl font-bold mb-1">Florian Schwarzinger</h1>
+          <p className="text-xl text-muted-foreground mb-3">Robotics Engineer</p>
+          <p className="text-muted-foreground">
+            Let's connect! Feel free to reach out via the form below or through social media.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <h2 className="text-xl font-bold mb-4 inline-block border-b-2 border-primary pb-2">Get in Touch</h2>
           
           {formSuccess ? (
             <div className="bg-muted/50 p-6 rounded-lg border border-border text-center">
@@ -70,20 +80,9 @@ const Contact = () => {
         </div>
 
         <div>
-          <h2 className="text-xl font-bold mb-6 inline-block border-b-2 border-primary pb-2">Connect</h2>
+          <h2 className="text-xl font-bold mb-4 inline-block border-b-2 border-primary pb-2">Connect</h2>
           
-          <div className="flex items-center mb-6 gap-4">
-            <Avatar className="h-16 w-16 border-2 border-primary">
-              <AvatarImage src={getProfileImage("avatar.jpg")} alt="Florian" />
-              <AvatarFallback>FS</AvatarFallback>
-            </Avatar>
-            <div>
-              <h3 className="font-medium text-lg">Florian Schwarzinger</h3>
-              <p className="text-muted-foreground">Robotics Engineer</p>
-            </div>
-          </div>
-          
-          <div className="mb-8">
+          <div className="mb-6">
             <p className="text-muted-foreground mb-4">
               Find me on these platforms:
             </p>
@@ -107,8 +106,8 @@ const Contact = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4">Resume</h2>
-            <p className="text-muted-foreground mb-4">
+            <h2 className="text-xl font-bold mb-3">Resume</h2>
+            <p className="text-muted-foreground mb-3">
               Download my resume to learn more about my experience and qualifications.
             </p>
             <Button asChild variant="hero" size="lg" className="text-base">

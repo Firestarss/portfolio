@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { getProfileImage } from "@/lib/images";
+import { getProfileImage } from "@/lib/files";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
@@ -41,8 +41,7 @@ const About = () => {
               </Button>
             </div>
           </div>
-          <div className="relative h-64 md:h-80 bg-muted rounded-lg overflow-hidden shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-background/10"></div>
+          <div className="relative h-64 md:h-80 bg-muted rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
             <img 
               src={getProfileImage("about-hero.jpg")}
               alt="Robotics engineering workspace with advanced robotic systems and equipment" 

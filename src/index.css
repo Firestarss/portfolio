@@ -246,9 +246,25 @@
     @apply border-border my-8;
   }
   
-  /* Images */
+  /* Base image styling */
   .prose img {
-    @apply rounded-lg my-4 max-w-full h-auto;
+    @apply rounded-lg my-4;
+  }
+  
+  /* Default styling for pure markdown-syntax images (![](path)) without custom styling */
+  .prose .markdown-image {
+    max-width: 70%;
+    height: auto;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+  
+  /* HTML images with custom styling get full flexibility */
+  .prose img:not(.markdown-image) {
+    max-width: 100%;
+    height: auto;
   }
   
   /* Strong/Bold */
@@ -260,4 +276,45 @@
   .prose em {
     @apply italic text-foreground;
   }
+}
+
+/* Multi-column image layouts for markdown */
+.image-row {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Higher specificity to override .prose .markdown-image */
+.prose .image-row img {
+  flex: 1;
+  min-width: 250px;
+  max-width: calc(50% - 0.75rem) !important;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  margin: 0 !important;
+  display: block;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Higher specificity to override .prose .markdown-image */
+.prose .image-grid img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  margin: 0 !important;
+  display: block;
 }
