@@ -233,25 +233,17 @@ One thing to note is that, to avoid conflict, the arbiter also contained a state
       "Real Steel inspired Rock'em Sock'em robots controlled by mimicking human poses",
     image: getProjectImage("shadow-boxing-robot", "hero.jpg"),
     tags: ["Mechanical"],
-    content: `<img src="/files/projects/shadow-boxing-robot/hero.jpg" alt="Shadow Boxing Robot" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
-
-This project was for my Principles of Engineering course. We had a bit over a month to put together a project that involved non trivial mechanical, software, and electrical components. My group took some inspiration from the movie Real Steel and decided we wanted to make a more advanced version of Rock'em Sock'em robots. We wanted both robots to be able to be controlled through mimicking the pose of a human controller as depicted in one of the pivotal moments of the movie.
-
-<div style="clear: both;"></div>
+    content: `This project was for my Principles of Engineering course. We had a bit over a month to put together a project that involved non trivial mechanical, software, and electrical components. My group took some inspiration from the movie Real Steel and decided we wanted to make a more advanced version of Rock'em Sock'em robots. We wanted both robots to be able to be controlled through mimicking the pose of a human controller as depicted in one of the pivotal moments of the movie.
 
 For this project I worked mainly on the CAD and fabrication of select mechanical aspects of the robot. All the final CAD was done in OnShape. I worked the most on the swashplate that acted as a hip joint allowing the robot to lean forwards/backwards and side to side. The pan and roll motors were each driven independently and the mechanisms were designed to not interfere with each other. This meant you could operate them both at the same time and have a wider range of motion.
 
-<img src="/files/projects/shadow-boxing-robot/Swashplate.jpg" alt="Swashplate Hip Joint CAD" style="float: left; width: 45%; margin: 0 1.5rem 1rem 0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+![Swashplate Hip Joint CAD](/files/projects/shadow-boxing-robot/Swashplate.jpg)
 
-*(The CAD on the left is missing the motors and enclosure to show the actual mechanism)*
-
-<div style="clear: both;"></div>
-
-<img src="/files/projects/shadow-boxing-robot/Shoulder.jpg" alt="Shoulder Joint CAD" style="float: right; width: 35%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<div style="text-align: center; margin-top: -0.5rem; margin-bottom: 1.5rem; color: #888; font-size: 0.85rem; font-style: italic;">The CAD above is missing the motors and enclosure to show the actual mechanism</div>
 
 I also worked on creating the 2 degree of freedom shoulder joint. For this, one of my teammates made a custom slew bearing to use as one of the main parts. This allowed us to cut down drastically on the overall cost of the project and it worked surprisingly well. The bottom of the shoulder mounted to the torso in a way that angled the bottom motor into a hole in the torso for it to sit. From there we just designed the two different sections of the shoulder to attach to the two different portions of the slew bearing. The gears were added later to allow the encoders to be able to read any rotation.
 
-<div style="clear: both;"></div>`,
+![Shoulder Joint CAD](/files/projects/shadow-boxing-robot/Shoulder.jpg)`,
   },
   {
     id: "forest-fire-simulation",
@@ -292,17 +284,14 @@ Ultimately, we ended up with a project that we were very happy with. We initiall
       "Guiding a robot across a precision-cut bridge using parametric equations and computed wheel velocities",
     image: getProjectImage("parametric-curve-following-robot", "hero.jpg"),
     tags: ["Robotics", "Controls"],
-    content: `<img src="/files/projects/parametric-curve-following-robot/Capture.JPG" alt="S-shaped Parametric Curve" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+    content: `This project was for my Qualitative Engineering Analysis (QEA) class. We used Neatos as the robots we were controlling. At the beginning of the assignment we were given the options to pick one of two different curves to plot and eventually have our robot follow. I picked the S-shaped parametric curve shown below. The first task we had was to use MATLAB to plot the curve and add tangent/normal vectors at various points hence the green and red arrows respectively.
 
-This project was for my Qualitative Engineering Analysis (QEA) class. We used Neatos as the robots we were controlling. At the beginning of the assignment we were given the options to pick one of two different curves to plot and eventually have our robot follow. I picked the S-shaped parametric curve (shown to the right). The first task we had was to use MATLAB to plot the curve and add tangent/normal vectors at various points hence the green and red arrows respectively.
+<div class="image-row">
+  <img src="/files/projects/parametric-curve-following-robot/Capture.JPG" alt="S-shaped Parametric Curve" />
+  <img src="/files/projects/parametric-curve-following-robot/ControlResponse.jpg" alt="Wheel Velocity Graphs" />
+</div>
 
-<div style="clear: both;"></div>
-
-<img src="/files/projects/parametric-curve-following-robot/ControlResponse.jpg" alt="Wheel Velocity Graphs" style="float: left; width: 45%; margin: 0 1.5rem 1rem 0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
-
-From there, I could use various equations to compute the velocity of the left and right wheels over time (shown on the left). I then wrote a program to send these wheel velocities to the Neato to guide it across the Bridge of Doom. The Bridge of Doom was a sheet of plywood that had been cut to follow the parametric curve I was given. It was also designed to only be slightly larger than the Neato to lower the room for error so our calculations and programs had to be precise. My attempt at crossing the Bridge of Doom can be seen below.
-
-<div style="clear: both;"></div>`,
+From there, I could use various equations to compute the velocity of the left and right wheels over time (shown on the right). I then wrote a program to send these wheel velocities to the Neato to guide it across the Bridge of Doom. The Bridge of Doom was a sheet of plywood that had been cut to follow the parametric curve I was given. It was also designed to only be slightly larger than the Neato to lower the room for error so our calculations and programs had to be precise. My attempt at crossing the Bridge of Doom can be seen below.`,
     videoUrl: "https://www.youtube.com/embed/oGO3A_GjIsU",
   },
   {

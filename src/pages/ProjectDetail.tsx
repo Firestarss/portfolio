@@ -106,20 +106,19 @@ const ProjectDetail = () => {
             Back to Projects
           </Link>
         </Button>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="flex items-center gap-1 text-sm text-muted-foreground">
           {prevProject ? (
             <Link
               to={`/projects/${prevProject.id}`}
               className="flex items-center gap-1 hover:text-primary transition-colors px-2 py-1 rounded"
             >
               <ArrowLeft size={14} />
-              <span className="hidden sm:inline">{prevProject.title}</span>
-              <span className="sm:hidden">Prev</span>
+              Prev
             </Link>
           ) : (
             <span className="text-muted-foreground/30 flex items-center gap-1 px-2 py-1">
               <ArrowLeft size={14} />
-              <span className="hidden sm:inline">Prev</span>
+              Prev
             </span>
           )}
           <span className="text-muted-foreground/30">|</span>
@@ -128,13 +127,12 @@ const ProjectDetail = () => {
               to={`/projects/${nextProject.id}`}
               className="flex items-center gap-1 hover:text-primary transition-colors px-2 py-1 rounded"
             >
-              <span className="hidden sm:inline">{nextProject.title}</span>
-              <span className="sm:hidden">Next</span>
+              Next
               <ArrowRight size={14} />
             </Link>
           ) : (
             <span className="text-muted-foreground/30 flex items-center gap-1 px-2 py-1">
-              <span className="hidden sm:inline">Next</span>
+              Next
               <ArrowRight size={14} />
             </span>
           )}
@@ -284,35 +282,35 @@ const ProjectDetail = () => {
       {(prevProject || nextProject) && (
         <>
           <Separator className="mb-8" />
-          <div className="flex justify-between items-stretch gap-4 mb-8">
-            {prevProject ? (
-              <Link
-                to={`/projects/${prevProject.id}`}
-                className="group flex-1 flex items-center gap-3 p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all min-w-0"
-              >
-                <ArrowLeft size={20} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-                <div className="min-w-0">
-                  <div className="text-xs text-muted-foreground mb-1">Previous Project</div>
-                  <div className="font-medium truncate group-hover:text-primary transition-colors">{prevProject.title}</div>
-                </div>
-              </Link>
-            ) : (
-              <div className="flex-1" />
-            )}
-            {nextProject ? (
-              <Link
-                to={`/projects/${nextProject.id}`}
-                className="group flex-1 flex items-center justify-end gap-3 p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all text-right min-w-0"
-              >
-                <div className="min-w-0">
-                  <div className="text-xs text-muted-foreground mb-1">Next Project</div>
-                  <div className="font-medium truncate group-hover:text-primary transition-colors">{nextProject.title}</div>
-                </div>
-                <ArrowRight size={20} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-              </Link>
-            ) : (
-              <div className="flex-1" />
-            )}
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div>
+              {prevProject && (
+                <Link
+                  to={`/projects/${prevProject.id}`}
+                  className="group flex items-center gap-3 p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all min-w-0 h-full"
+                >
+                  <ArrowLeft size={20} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                  <div className="min-w-0">
+                    <div className="text-xs text-muted-foreground mb-1">Previous Project</div>
+                    <div className="font-medium truncate group-hover:text-primary transition-colors">{prevProject.title}</div>
+                  </div>
+                </Link>
+              )}
+            </div>
+            <div>
+              {nextProject && (
+                <Link
+                  to={`/projects/${nextProject.id}`}
+                  className="group flex items-center justify-end gap-3 p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all text-right min-w-0 h-full"
+                >
+                  <div className="min-w-0">
+                    <div className="text-xs text-muted-foreground mb-1">Next Project</div>
+                    <div className="font-medium truncate group-hover:text-primary transition-colors">{nextProject.title}</div>
+                  </div>
+                  <ArrowRight size={20} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                </Link>
+              )}
+            </div>
           </div>
         </>
       )}
