@@ -98,13 +98,48 @@ const ProjectDetail = () => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-4xl mx-auto">
-      {/* Back Button */}
-      <Button variant="ghost" asChild className="mb-6 -ml-2">
-        <Link to="/projects">
-          <ArrowLeft className="mr-2" />
-          Back to Projects
-        </Link>
-      </Button>
+      {/* Top Navigation Bar */}
+      <div className="flex items-center justify-between mb-6 -ml-2">
+        <Button variant="ghost" asChild>
+          <Link to="/projects">
+            <ArrowLeft className="mr-2" />
+            Back to Projects
+          </Link>
+        </Button>
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          {prevProject ? (
+            <Link
+              to={`/projects/${prevProject.id}`}
+              className="flex items-center gap-1 hover:text-primary transition-colors px-2 py-1 rounded"
+            >
+              <ArrowLeft size={14} />
+              <span className="hidden sm:inline">{prevProject.title}</span>
+              <span className="sm:hidden">Prev</span>
+            </Link>
+          ) : (
+            <span className="text-muted-foreground/30 flex items-center gap-1 px-2 py-1">
+              <ArrowLeft size={14} />
+              <span className="hidden sm:inline">Prev</span>
+            </span>
+          )}
+          <span className="text-muted-foreground/30">|</span>
+          {nextProject ? (
+            <Link
+              to={`/projects/${nextProject.id}`}
+              className="flex items-center gap-1 hover:text-primary transition-colors px-2 py-1 rounded"
+            >
+              <span className="hidden sm:inline">{nextProject.title}</span>
+              <span className="sm:hidden">Next</span>
+              <ArrowRight size={14} />
+            </Link>
+          ) : (
+            <span className="text-muted-foreground/30 flex items-center gap-1 px-2 py-1">
+              <span className="hidden sm:inline">Next</span>
+              <ArrowRight size={14} />
+            </span>
+          )}
+        </div>
+      </div>
 
       {/* Title and Tags */}
       <h1 className="text-4xl md:text-5xl font-bold mb-4">{project.title}</h1>
