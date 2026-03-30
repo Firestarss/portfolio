@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Youtube, FileText, Images, CircuitBoard, Home, FolderOpen, Download } from "lucide-react";
+import { ArrowLeft, ArrowRight, Youtube, FileText, Images, CircuitBoard, Home, FolderOpen, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { projects } from "../data/projects";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -36,6 +36,11 @@ const GalleryImage = ({ src, alt }: { src: string; alt: string }) => {
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const project = projects.find((p) => p.id === id);
+
+  const visibleProjects = projects.filter((p) => p.showInProjects !== false);
+  const currentIndex = visibleProjects.findIndex((p) => p.id === id);
+  const prevProject = currentIndex > 0 ? visibleProjects[currentIndex - 1] : null;
+  const nextProject = currentIndex < visibleProjects.length - 1 ? visibleProjects[currentIndex + 1] : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -238,6 +243,43 @@ const ProjectDetail = () => {
             <MarkdownRenderer>{project.lessonsLearned}</MarkdownRenderer>
           </article>
         </div>
+      )}
+
+      {/* Previous / Next Project Navigation */}
+      {(prevProject || nextProject) && (
+        <>
+          <Separator className="mb-8" />
+          <div className="flex justify-between items-stretch gap-4 mb-8">
+            {prevProject ? (
+              <Link
+                to={`/projects/${prevProject.id}`}
+                className="group flex-1 flex items-center gap-3 p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all min-w-0"
+              >
+                <ArrowLeft size={20} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                <div className="min-w-0">
+                  <div className="text-xs text-muted-foreground mb-1">Previous Project</div>
+                  <div className="font-medium truncate group-hover:text-primary transition-colors">{prevProject.title}</div>
+                </div>
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+            {nextProject ? (
+              <Link
+                to={`/projects/${nextProject.id}`}
+                className="group flex-1 flex items-center justify-end gap-3 p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all text-right min-w-0"
+              >
+                <div className="min-w-0">
+                  <div className="text-xs text-muted-foreground mb-1">Next Project</div>
+                  <div className="font-medium truncate group-hover:text-primary transition-colors">{nextProject.title}</div>
+                </div>
+                <ArrowRight size={20} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+          </div>
+        </>
       )}
     </motion.div>
   );

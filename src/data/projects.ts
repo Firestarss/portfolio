@@ -101,9 +101,9 @@ We're currently in the prototyping phase, testing various actuator configuration
     id: "flybox-redesign",
     title: "FlyBox Redesign",
     description:
-      "Senior Engineering Capstone, Mechanical, CAD, Electrical",
+      "Senior capstone project redesigning lab equipment used in Nobel Prize-winning circadian rhythm research at Brandeis University",
     image: getProjectImage("flybox-redesign", "hero.jpg"),
-    tags: ["Capstone", "Mechanical", "CAD", "Electrical"],
+    tags: ["Mechanical", "Electrical"],
     content: `For my senior capstone project, I worked on a team of Olin students in collaboration with Brandeis University to redesign a piece of laboratory equipment called the FlyBox. The FlyBox was designed by Brandeis to monitor and track the behavior of fruit flies over multi-day periods for circadian rhythm research. Using specific lights in the FlyBox, researchers were able to use optogenetics to control individual neurons in the flies' brains and see how their sleep patterns changed. The device was created to replace existing methods of fruit fly behavior observation, offering more detailed and accurate data at a lower cost. Already, the FlyBox has been used to generate data for Nobel Prize-winning research on the circadian rhythm. However, the original version of the FlyBox was just a prototype. It lacked the durability and polish needed for long term use. Furthermore, Brandeis wished for the FlyBox to be created from a simple open source kit, able to be assembled by anybody. In a kit form, the FlyBox could be shared and used by partner institutions around the world. The goal of this project was to redesign the FlyBox from a functional prototype into a polished product that was more robust, able to be assembled from a kit, and be user friendly.
 
 <div class="image-row">
@@ -126,9 +126,9 @@ Check out the following links to see more about this project as well as the part
     id: "autonomous-submersible-rov",
     title: "Autonomous Submersible ROV",
     description:
-      "ROS, CV, Mechanical",
+      "Summer internship at UW Applied Physics Lab making underwater drones autonomously follow each other using OpenCV and ROS",
     image: getProjectImage("autonomous-submersible-rov", "hero.jpg"),
-    tags: ["ROS", "Computer Vision", "Mechanical", "OpenCV", "Python"],
+    tags: ["Robotics", "Software", "Computer Vision"],
     content: `During the summer of 2021, I got the privilege of working for the Applied Physics Laboratory at the University of Washington. Our project was to take 2 commercially available underwater drones (Remotely Operated Vehicles or ROVs) and see if they may be usable for use in further research applications. To demonstrate this, we were given the task of making one ROV follow the other around autonomously utilizing OpenCV and ROS. We also needed to determine the feasibility of integrating additional sensors into the ROV.
 
 <img src="/files/projects/autonomous-submersible-rov/BlueROV2.jpg" alt="BlueROV2" style="float: left; width: 45%; margin: 0 1.5rem 1rem 0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
@@ -148,6 +148,8 @@ The key feature of this new interface was that it implemented an autonomous mode
 In the end, we managed to show off a demonstration of one of the ROVs autonomously following the other around! We also determined that the ROV would be a good platform for further research applications. It is fairly compact and customizable and can also handle integration with additional sensors. This, combined with the onboard Raspberry Pi, make the BlueROV2 a pretty attractive option for tether-less applications. It is also quite easy to integrate our own custom control code so the range of potential applications is quite large.
 
 There was a lot more to this project than what I can quickly talk about here. This includes the initial building of the ROVs, troubleshooting hardware issues, the intern team's journey through learning ROS, the hardware and software integration of a stereo camera, tons of testing, and so much more. To read the full report, which goes much more in detail, checkout our [Summer Interns Report: BlueROV Team.](https://depts.washington.edu/uwaplopal/post/2021-08-31-bluerov-summer-interns-report.html)
+
+The video below was shot during our final demonstration. The ROV with the fiducial marker is being manually controlled while the other ROV is autonomously controlled.
 
 ![Intern Team](/files/projects/autonomous-submersible-rov/interns.jpg)`,
     videoUrl: "https://www.youtube.com/embed/hxI62s1J6Yc",
@@ -170,9 +172,9 @@ There was a lot more to this project than what I can quickly talk about here. Th
     id: "2x2-cube-solver",
     title: "2x2 Rubik's Cube Solver",
     description:
-      "Data Structures and Algorithms, Software",
+      "Final project comparing solving algorithms to find the fastest way to solve a 2x2 Rubik's Cube",
     image: getProjectImage("2x2-cube-solver", "hero.jpg"),
-    tags: ["Algorithms", "Software", "Python", "Data Structures"],
+    tags: ["Software"],
     content: `<img src="/files/projects/2x2-cube-solver/unpacked_cube.jpg" alt="Unpacked 2x2 Cube" style="float: right; width: 35%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
 This was my final project that I did for my Data Structures and Algorithms class. We got to pick our own projects as long as they involved experimentally optimizing some aspect of the project. I decided to revisit my old [Rubik's Cube Solving Robot](#/projects/2x2-cube-solving-robot) project as the program I wrote for that was done earlier in the year when I had less knowledge of data structures and algorithms.
@@ -186,9 +188,9 @@ For my project, I wanted to focus on optimizing the overall runtime of the progr
     id: "2x2-cube-solving-robot",
     title: "2x2 Rubik's Cube Solving Robot",
     description:
-      "MakeHarvard 2020, Software",
+      "Winning submission for the MakeHarvard 2020 hackathon - a robot that solves a 2x2 Rubik's Cube autonomously",
     image: getProjectImage("2x2-cube-solving-robot", "hero.jpg"),
-    tags: ["Hackathon", "Software", "Arduino", "Python", "Serial"],
+    tags: ["Software", "Robotics"],
     content: `<img src="/files/projects/2x2-cube-solving-robot/Dum-E.jpg" alt="Dum-E Robot" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
 This project was my group's winning submission for the 2020 MakeHarvard make-a-thon at Harvard University. For this 24-hour long event, we decided we wanted to try to make a robot that could solve a 2x2x2 Rubik's cube without external input. The idea was to have a color sensor figure out the cube state, relay that information to a solver, and then execute the resulting sequence of moves. While my teammates tackled the hardware and firmware aspects of this project, I worked on writing the program that would take a scrambled state from the Arduino, generate the moves needed to solve the cube, and send them back to the Arduino so it could move the robot's motors accordingly.
@@ -208,9 +210,9 @@ Check out our MakeHarvard submission page [here](https://devpost.com/software/2-
     id: "robotic-tug-boat",
     title: "Robotic Tug Boat",
     description:
-      "Fundamentals of Robotics Class, Object Recognition, Software",
+      "A boat that hunts, follows, and avoids obstacles using computer vision for my Fundamentals of Robotics course",
     image: getProjectImage("robotic-tug-boat", "hero.jpg"),
-    tags: ["Robotics", "Computer Vision", "Software", "PixyCam"],
+    tags: ["Robotics", "Computer Vision"],
     content: `<img src="/files/projects/robotic-tug-boat/Tug.png" alt="Robotic Tug Boat" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
 This project was for my Fundamentals of Robotics course. As a group we were tasked with making three overarching functions: Hunt, Follow and Avoid. Hunt's task was to make the boat rotate back and forth in place, scanning the entire area in front of it trying to find a pink narwhal stuffed animal. Follow does exactly that, it turns the boat so that it can follow the narwhal. Avoid's task was to keep the boat safe by detecting obstacles and guiding the boat around them. We also needed an Arbiter to pick which outputs to obey.
@@ -219,7 +221,7 @@ I worked almost exclusively on the Follow function and the other sub-functions n
 
 <div style="clear: both;"></div>
 
-I also worked on the arbiter. All 3 of the overarching functions output an array representing -90 degrees to 90 degrees. The arrays contained values from -100 to 100 that represented each function's preference on where to turn the boat (100 being strong preference, 0 being neutral, and -100 being strong preference against). The arbiter took these outputs and let them interact constructively. The resulting largest value would correspond the the ideal heading and the arbiter would send that to the motors to turn the boat.
+I also worked on the arbiter. All 3 of the overarching functions output an array representing -90 degrees to 90 degrees. The arrays contained values from -100 to 100 that represented each function's preference on where to turn the boat (100 being strong preference, 0 being neutral, and -100 being strong preference against). The arbiter took these outputs and let them interact constructively. The resulting largest value would correspond to the ideal heading and the arbiter would send that to the motors to turn the boat.
 
 One thing to note is that, to avoid conflict, the arbiter also contained a state machine where it would ignore the Hunt output if there was a narwhal detected and would ignore the Follow output if there was no narwhal detected.`,
     videoUrl: "https://www.youtube.com/embed/yWfW1rUIOq8",
@@ -228,12 +230,12 @@ One thing to note is that, to avoid conflict, the arbiter also contained a state
     id: "shadow-boxing-robot",
     title: "Shadow Boxing Robot",
     description:
-      "Principles of Engineering Class, Mechanical",
+      "Real Steel inspired Rock'em Sock'em robots controlled by mimicking human poses",
     image: getProjectImage("shadow-boxing-robot", "hero.jpg"),
-    tags: ["Mechanical", "CAD", "Mechatronics", "OnShape"],
+    tags: ["Mechanical"],
     content: `<img src="/files/projects/shadow-boxing-robot/hero.jpg" alt="Shadow Boxing Robot" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
-This Project was for my Principles of Engineering course. We had a bit over a month to put together a project that involved non trivial mechanical, software, and electrical components. My group took some inspiration from the movie Real Steel and decided we wanted to make a more advanced version of Rock'em Sock'em robots. We wanted both robots to be able to be controlled through mimicking the pose of a human controller as depicted one of the pivotal moments of the movie.
+This project was for my Principles of Engineering course. We had a bit over a month to put together a project that involved non trivial mechanical, software, and electrical components. My group took some inspiration from the movie Real Steel and decided we wanted to make a more advanced version of Rock'em Sock'em robots. We wanted both robots to be able to be controlled through mimicking the pose of a human controller as depicted in one of the pivotal moments of the movie.
 
 <div style="clear: both;"></div>
 
@@ -247,7 +249,7 @@ For this project I worked mainly on the CAD and fabrication of select mechanical
 
 <img src="/files/projects/shadow-boxing-robot/Shoulder.jpg" alt="Shoulder Joint CAD" style="float: right; width: 35%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
-I also worked on creating the 2 degree of freedom shoulder joint. For this, one of my teammates made a custom slew bearing to use as one of the main parts. This allowed us to cut down drastically on the overall cost of the project and it worked surprisingly well. The bottom of the shoulder mounted to the torso in a way that angled the bottom motor into hole in the torso for it to sit. From there we just designed the two different sections of the shoulder to attach to the two different portions of the slew bearing. The gears were added later to allow the encoders to be able to read any rotation.
+I also worked on creating the 2 degree of freedom shoulder joint. For this, one of my teammates made a custom slew bearing to use as one of the main parts. This allowed us to cut down drastically on the overall cost of the project and it worked surprisingly well. The bottom of the shoulder mounted to the torso in a way that angled the bottom motor into a hole in the torso for it to sit. From there we just designed the two different sections of the shoulder to attach to the two different portions of the slew bearing. The gears were added later to allow the encoders to be able to read any rotation.
 
 <div style="clear: both;"></div>`,
   },
@@ -255,16 +257,16 @@ I also worked on creating the 2 degree of freedom shoulder joint. For this, one 
     id: "forest-fire-simulation",
     title: "Forest Fire Simulation",
     description:
-      "Software Design",
+      "Simulating forest fire spread in Yosemite Valley using real-world topography and wind data",
     image: getProjectImage("forest-fire-simulation", "hero.jpg"),
-    tags: ["Software", "Python", "Simulation", "GDAL"],
+    tags: ["Software"],
     content: `![BLAND Fire Simulation](/files/projects/forest-fire-simulation/BlandFire1.jpg)
 
 <div style="text-align: center; margin-top: -0.5rem; margin-bottom: 1.5rem; color: #888; font-size: 0.85rem; font-style: italic;">We affectionately named our program BLAND after a site that helped us immensely with gathering our data, LANDFIRE</div>
 
 <img src="/files/projects/forest-fire-simulation/hero.jpg" alt="Forest Fire Simulation" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
-This was my final project for my Software Design class. My group and I decided that we wanted to make a project on simulating the spread of forest fires using a cellular automaton model. We wanted the project to be able to factor in real world data on topography, wind speed and wind speed for a specific area and time. We chose Yosemite Valley and the surrounding area as the main area for our program so we could theoretically use a past fire (i.e. the 2018 Ferguson Fire) to check the accuracy of our final project.
+This was my final project for my Software Design class. My group and I decided that we wanted to make a project on simulating the spread of forest fires using a cellular automaton model. We wanted the project to be able to factor in real world data on topography, wind speed and wind direction for a specific area and time. We chose Yosemite Valley and the surrounding area as the main area for our program so we could theoretically use a past fire (i.e. the 2018 Ferguson Fire) to check the accuracy of our final project.
 
 My group broke the overall program into three main areas: the actual simulation, the topography data, and the wind related data. I initially worked with another one of my group mates on getting a very basic simulation running without any external data and figuring out what data structures and other elements we would need to use. While my group mate continued to work on the simulation and refine it to be as accurate as he could, I moved onto attempting to get and integrate the topography data.
 
@@ -287,9 +289,9 @@ Ultimately, we ended up with a project that we were very happy with. We initiall
     id: "parametric-curve-following-robot",
     title: "Parametric Curve Following Robot",
     description:
-      "Qualitative Engineering Analysis Class, Software, Controls",
+      "Guiding a robot across a precision-cut bridge using parametric equations and computed wheel velocities",
     image: getProjectImage("parametric-curve-following-robot", "hero.jpg"),
-    tags: ["Controls", "MATLAB", "Robotics", "Software"],
+    tags: ["Robotics", "Controls"],
     content: `<img src="/files/projects/parametric-curve-following-robot/Capture.JPG" alt="S-shaped Parametric Curve" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
 This project was for my Qualitative Engineering Analysis (QEA) class. We used Neatos as the robots we were controlling. At the beginning of the assignment we were given the options to pick one of two different curves to plot and eventually have our robot follow. I picked the S-shaped parametric curve (shown to the right). The first task we had was to use MATLAB to plot the curve and add tangent/normal vectors at various points hence the green and red arrows respectively.
@@ -307,9 +309,9 @@ From there, I could use various equations to compute the velocity of the left an
     id: "kinetic-train-sculpture",
     title: "Kinetic Train Sculpture",
     description:
-      "Mechanical Prototyping",
+      "Victorian-era kinetic sculpture with belt drives, gear transmissions, and cam mechanisms",
     image: getProjectImage("kinetic-train-sculpture", "hero.jpg"),
-    tags: ["Mechanical", "Prototyping", "CAD", "SolidWorks"],
+    tags: ["Mechanical"],
     content: `<img src="/files/projects/kinetic-train-sculpture/hero.jpg" alt="Kinetic Train Sculpture" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
 This project was a group project for my Introduction to Mechanical Prototyping class. We were given the project to create a kinetic sculpture that had something to do with the Victorian era. Now, what's the first thing that pops into your head when you think of the Victorian era? Trains right? Well maybe not but, that is what we wanted our structure to be. Additionally, the sculpture had to contain specific mechanical elements (i.e. a belt, a chain, 10+ sheet metal/acrylic parts, a cam/cam follower, a 4-bar linkage, 2 gear transmissions, etc.).
