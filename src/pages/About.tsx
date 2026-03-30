@@ -74,27 +74,51 @@ const About = () => {
         <h2 className="text-2xl font-bold mb-6 inline-block border-b-2 border-primary pb-2">Skills & Expertise</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <h3 className="font-semibold mb-3 text-foreground">Technical Skills</h3>
+            <h3 className="font-semibold mb-3 text-foreground">Machining</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Robot Operating System (ROS/ROS2)
+                CNC Mill
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Computer Vision & Sensor Fusion
+                Injection Molding
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Machine Learning for Robotics
+                Welding
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                CAD/CAM Software
+                Lathe
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Embedded Systems Programming
+                Sheet Metal Forming
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                Plasma Cutting
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                FDM & Resin Printing
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                Laser Cutting
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                Thermo-Forming
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                Casting
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                CAM
               </li>
             </ul>
           </div>
@@ -103,48 +127,72 @@ const About = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Python & C++
+                Linux
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                MATLAB & Simulink
+                C++
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Control Systems Design
+                Python
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Real-time Operating Systems
+                Rust
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Path Planning Algorithms
+                GitHub / GitLab
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                Java
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                OpenCV
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                ROS
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                Arduino
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                MATLAB
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-3 text-foreground">Tools & Platforms</h3>
+            <h3 className="font-semibold mb-3 text-foreground">Software</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Git & Version Control
+                SOLIDWORKS
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Docker & Containerization
+                OnShape
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Linux & Ubuntu Systems
+                Jira
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Gazebo & RViz Simulation
+                TestRails
               </li>
               <li className="flex items-center">
                 <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
-                Hardware Prototyping
+                Microsoft Office Suite
+              </li>
+              <li className="flex items-center">
+                <span className="h-2 w-2 rounded-full bg-primary mr-2"></span>
+                Adobe Creative Cloud
               </li>
             </ul>
           </div>
