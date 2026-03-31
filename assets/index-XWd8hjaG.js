@@ -267,7 +267,7 @@ Ok this one needs some context. I have a stuffed animal goat named Atlas. He has
 
 That's the backlog for now. If any of these end up becoming real projects, they'll make their way to the main page. Until then, consider yourself briefed.
 
-<p class="invisible-ink" style="margin-top: 6rem; text-align: center; font-size: 0.55rem; font-family: monospace; user-select: none;">Created by Florian Schwarzinger</p>`},{id:"wip-exoskeleton-v2",title:"Advanced Exoskeleton System v2",description:"Next-generation powered exoskeleton with enhanced force feedback and adaptive control. Currently in development.",image:kt("exoskeleton","hero.jpg"),tags:["Robotics","Biomechanics","Control Systems","WIP"],showInProjects:!1,showInTerminal:!1,content:`# Advanced Exoskeleton System v2
+<p class="invisible-ink" style="margin-top: 6rem; text-align: center; font-size: 1.1rem; font-family: monospace; user-select: none;">Created by Florian Schwarzinger</p>`},{id:"wip-exoskeleton-v2",title:"Advanced Exoskeleton System v2",description:"Next-generation powered exoskeleton with enhanced force feedback and adaptive control. Currently in development.",image:kt("exoskeleton","hero.jpg"),tags:["Robotics","Biomechanics","Control Systems","WIP"],showInProjects:!1,showInTerminal:!1,content:`# Advanced Exoskeleton System v2
 
 **Status**: Work in Progress
 
