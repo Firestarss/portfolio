@@ -66,8 +66,8 @@ const About = () => {
 
       {/* About: Photo + text side by side */}
       <section className="mb-12">
-        <div className="grid md:grid-cols-5 gap-8 items-start">
-          <div className="md:col-span-2">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
             <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
               <img
                 src={getProfileImage("about-hero.jpg")}
@@ -77,7 +77,7 @@ const About = () => {
               />
             </div>
           </div>
-          <div className="md:col-span-3 space-y-4">
+          <div className="space-y-4">
             <p className="text-muted-foreground leading-relaxed">
               Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
               robotics is that it touches a little bit of everything (mechanical, electrical, software) and I like to be
@@ -107,7 +107,7 @@ const About = () => {
                 {category.items.map((item) => (
                   <span
                     key={item}
-                    className="px-3 py-1.5 text-sm rounded-full bg-primary/10 text-primary border border-primary/20"
+                    className="px-3 py-1.5 text-sm rounded-full bg-primary/10 text-foreground border border-primary/20"
                   >
                     {item}
                   </span>
