@@ -38,7 +38,7 @@ export const projects: Project[] = [
     showInProjects: false,
     showInTerminal: true,
     showInRandomCommand: false,
-    showInRandomButton: false,
+    showInRandomButton: true,
     contentLabel: "",
     content: `Well, you found the secret page. Nice work. Since you went through the trouble, here's a look at what's in the pipeline.
 
