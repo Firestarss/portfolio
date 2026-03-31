@@ -16,13 +16,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       className="group bg-muted/5 border border-border rounded-lg overflow-hidden hover:border-primary/100 hover:shadow-md hover:shadow-primary/20 transition-all duration-300 focus-within:border-primary/70 flex flex-col h-full"
     >
       <Link to={`/projects/${project.id}`} className="block focus:outline-none flex flex-col h-full">
-      <AspectRatio ratio={16 / 9} className="bg-muted/20">
+      <AspectRatio ratio={16 / 9} className="bg-muted/20 overflow-hidden">
           <img
             src={project.image}
             alt={project.title}
             loading="lazy"
-            style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
-            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            style={{
+              ...(project.imagePosition ? { objectPosition: project.imagePosition } : {}),
+              ...(project.imageScale ? { transform: `scale(${project.imageScale})`, transformOrigin: "center center" } : {}),
+            }}
+            className={`object-cover w-full h-full transition-transform duration-300 ${project.imageScale ? "" : "group-hover:scale-105"}`}
           />
         </AspectRatio>
         <div className="p-5 flex flex-col flex-grow">
