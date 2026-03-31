@@ -253,7 +253,7 @@ Error generating stack: `+s.message+`
 
 ## Rubik's Cube World Record Attempt
 
-Remember that cube solving robot from the hackathon? I'm revisiting it, but this time the goal is a Guinness World Record. The original solving algorithm was functional but far from optimized. I've since rewritten the solver from scratch in Rust and the performance gains are significant. Right now I'm deep in the hardware design and working through the integration and build steps. There's a lot of mechanical precision required to hit the speeds I'm targeting, so this one is going to take a while, but I'm committed to seeing it through.
+Remember that cube solving robot from the hackathon? And the algorithm comparison project? Yeah, apparently I can't leave Rubik's cubes alone. I'm revisiting it again, but this time the goal is a Guinness World Record. The original solving algorithm was functional but far from optimized. I've since rewritten the solver from scratch in Rust and the performance gains are significant. Right now I'm deep in the hardware design and working through the integration and build steps. There's a lot of mechanical precision required to hit the speeds I'm targeting, so this one is going to take a while, but I'm committed to seeing it through.
 
 ## LED Totem / Antenna
 
