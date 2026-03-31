@@ -185,7 +185,7 @@ const Terminal = () => {
 
     if (awaitingPassword) {
       // To change password: console.log(await hashPassword("your_password"))
-      const PASSWORD_HASH = "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5";
+      const PASSWORD_HASH = "3f35589222133668ecb73c7da1acc5a1f0504ef9e6f511101773e0338d81cd71";
 
       const inputHash = await hashPassword(input.trim());
       if (inputHash === PASSWORD_HASH) {
