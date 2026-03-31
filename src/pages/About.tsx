@@ -65,28 +65,32 @@ const About = () => {
       </section>
 
       {/* About: Photo + text side by side */}
-      <section className="mb-12 max-w-2xl mx-auto">
-        <div className="rounded-lg overflow-hidden mb-8 shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)] max-w-lg mx-auto">
-          <img
-            src={getProfileImage("about-hero.jpg")}
-            alt="Florian Schwarzinger"
-            loading="lazy"
-            className="w-full h-auto object-cover object-center"
-          />
-        </div>
-        <div className="space-y-4">
-          <p className="text-muted-foreground leading-relaxed">
-            Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
-            robotics is that it touches a little bit of everything (mechanical, electrical, software) and I like to be
-            involved in all of it. I've worked on everything from autonomous underwater drones to scientific lab
-            equipment and forest fire simulations and I'm happiest when I'm designing something in CAD, writing the
-            code to make it work, and figuring out why it doesn't do what it's supposed to yet.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            When I'm not engineering things, you can usually find me spinning fire, training BJJ, playing video
-            games with friends, or doing something behind the scenes in technical theater. Take a look around and
-            check out some of my projects!
-          </p>
+      <section className="mb-12">
+        <div className="grid md:grid-cols-5 gap-8 items-center">
+          <div className="md:col-span-2 space-y-4">
+            <p className="text-muted-foreground leading-relaxed">
+              Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
+              robotics is that it touches a little bit of everything (mechanical, electrical, software) and I like to be
+              involved in all of it. I've worked on everything from autonomous underwater drones to scientific lab
+              equipment and forest fire simulations and I'm happiest when I'm designing something in CAD, writing the
+              code to make it work, and figuring out why it doesn't do what it's supposed to yet.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              When I'm not engineering things, you can usually find me spinning fire, training BJJ, playing video
+              games with friends, or doing something behind the scenes in technical theater. Take a look around and
+              check out some of my projects!
+            </p>
+          </div>
+          <div className="md:col-span-3">
+            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
+              <img
+                src={getProfileImage("about-hero.jpg")}
+                alt="Florian Schwarzinger"
+                loading="lazy"
+                className="w-full h-auto object-cover object-center"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
