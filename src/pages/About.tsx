@@ -60,7 +60,7 @@ const About = () => {
               Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
               robotics is that it touches a little bit of everything (mechanical, electrical, software) and I like to be
               involved in all of it. I've worked on everything from autonomous underwater drones to scientific lab
-              equipment and forest fire simulations and I'm happiest when I'm designing something in CAD, writing the
+              equipment and forest fire simulations, and I'm happiest when I'm designing something in CAD, writing the
               code to make it work, and figuring out why it doesn't do what it's supposed to yet.
             </p>
             <p className="text-muted-foreground leading-relaxed">
