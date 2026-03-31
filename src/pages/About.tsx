@@ -66,12 +66,12 @@ const About = () => {
             </p>
           </div>
           <div className="flex flex-col items-center gap-6">
-            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)] aspect-square w-full max-w-md">
+            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)] w-full max-w-md">
               <img
                 src={getProfileImage("about-hero.jpg")}
                 alt="Florian Schwarzinger"
                 loading="lazy"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-cover object-center"
               />
             </div>
             <div className="flex space-x-4">
