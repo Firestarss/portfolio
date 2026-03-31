@@ -42,32 +42,16 @@ const About = () => {
       transition={fadeInAnimation.transition}
       className="max-w-4xl mx-auto"
     >
-      {/* Hero: Name, title, CTA — visible immediately */}
-      <section className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 text-foreground whitespace-nowrap">
-          Florian Schwarzinger
-        </h1>
-        <h2 className="text-xl md:text-2xl text-primary mb-6">
-          Robotics Engineer
-        </h2>
-        <div className="flex space-x-4 justify-center">
-          <Button asChild variant="hero" size="lg" className="text-base">
-            <Link to="/projects">
-              View Projects
-            </Link>
-          </Button>
-          <Button asChild variant="hero-outline" size="lg" className="text-base">
-            <Link to="/contact">
-              Get in Touch
-            </Link>
-          </Button>
-        </div>
-      </section>
-
-      {/* About: Photo + text side by side */}
+      {/* About: Text left, photo + buttons right */}
       <section className="mb-12">
-        <div className="grid md:grid-cols-5 gap-8 items-center">
-          <div className="md:col-span-2 space-y-4">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-2 text-foreground whitespace-nowrap">
+              Florian Schwarzinger
+            </h1>
+            <h2 className="text-xl md:text-2xl text-primary">
+              Robotics Engineer
+            </h2>
             <p className="text-muted-foreground leading-relaxed">
               Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
               robotics is that it touches a little bit of everything (mechanical, electrical, software) and I like to be
@@ -81,14 +65,26 @@ const About = () => {
               check out some of my projects!
             </p>
           </div>
-          <div className="md:col-span-3">
-            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
+          <div className="flex flex-col items-center gap-6">
+            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)] aspect-square w-full max-w-md">
               <img
                 src={getProfileImage("about-hero.jpg")}
                 alt="Florian Schwarzinger"
                 loading="lazy"
-                className="w-full h-auto object-cover object-center"
+                className="w-full h-full object-cover object-center"
               />
+            </div>
+            <div className="flex space-x-4">
+              <Button asChild variant="hero" size="lg" className="text-base">
+                <Link to="/projects">
+                  View Projects
+                </Link>
+              </Button>
+              <Button asChild variant="hero-outline" size="lg" className="text-base">
+                <Link to="/contact">
+                  Get in Touch
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
