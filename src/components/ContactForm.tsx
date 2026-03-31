@@ -132,7 +132,7 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      {/* Honeypot field — hidden from users but visible to bots */}
+      {/* Honeypot field - hidden from users but visible to bots */}
       <div style={{ display: "none" }}>
         <label>
           Don’t fill this out:  

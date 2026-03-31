@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 const About = () => {
-  document.title = "Florian Schwarzinger - Robotics Engineer";
+  document.title = "Florian Schwarzinger | Portfolio";
   const skillCategories = [
     {
       title: "Programming",
