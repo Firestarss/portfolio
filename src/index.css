@@ -320,12 +320,12 @@
 }
 
 /* Invisible ink easter egg */
-.invisible-ink {
-  color: hsl(240 10% 3.9%);
+.prose p.invisible-ink {
+  color: hsl(240 10% 3.9%) !important;
   transition: color 2s ease;
 }
 
-.invisible-ink:hover,
-.invisible-ink.revealed {
-  color: hsl(240 5% 18%);
+.prose p.invisible-ink:hover,
+.prose p.invisible-ink.revealed {
+  color: hsl(240 5% 18%) !important;
 }

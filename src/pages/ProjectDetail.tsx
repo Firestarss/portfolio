@@ -48,9 +48,13 @@ const ProjectDetail = () => {
 
   const handleScroll = useCallback(() => {
     const scrolledToBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
-    if (scrolledToBottom) {
-      document.querySelectorAll('.invisible-ink').forEach(el => el.classList.add('revealed'));
-    }
+    document.querySelectorAll('.invisible-ink').forEach(el => {
+      if (scrolledToBottom) {
+        el.classList.add('revealed');
+      } else {
+        el.classList.remove('revealed');
+      }
+    });
   }, []);
 
   useEffect(() => {
