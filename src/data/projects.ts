@@ -56,7 +56,7 @@ Ok this one needs some context. I have a stuffed animal goat named Atlas. He has
 
 That's the backlog for now. If any of these end up becoming real projects, they'll make their way to the main page. Until then, consider yourself briefed.
 
-<p style="margin-top: 4rem; text-align: center; font-size: 0.7rem; color: hsl(240 5% 30%); font-family: monospace;">Created by Florian Schwarzinger</p>`,
+<p style="margin-top: 6rem; text-align: center; font-size: 0.55rem; color: hsl(240 5% 12%); font-family: monospace; user-select: none;">Created by Florian Schwarzinger</p>`,
   },
   {
     id: "wip-exoskeleton-v2",

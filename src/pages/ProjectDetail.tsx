@@ -183,11 +183,15 @@ const ProjectDetail = () => {
 
       {/* Project Description */}
       <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-2 flex items-center">
-          <FileText className="text-primary mr-2" size={28} />
-          Project Description
-        </h2>
-        <Separator className="mb-6" />
+        {project.showInProjects !== false && (
+          <>
+            <h2 className="text-2xl font-semibold mb-2 flex items-center">
+              <FileText className="text-primary mr-2" size={28} />
+              Project Description
+            </h2>
+            <Separator className="mb-6" />
+          </>
+        )}
         <article className="prose prose-lg dark:prose-invert max-w-none">
           <MarkdownRenderer>{project.content}</MarkdownRenderer>
         </article>
