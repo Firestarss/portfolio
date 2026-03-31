@@ -67,16 +67,6 @@ const About = () => {
       {/* About: Photo + text side by side */}
       <section className="mb-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
-              <img
-                src={getProfileImage("about-hero.jpg")}
-                alt="Florian Schwarzinger"
-                loading="lazy"
-                className="w-full h-auto object-cover object-center"
-              />
-            </div>
-          </div>
           <div className="space-y-4">
             <p className="text-muted-foreground leading-relaxed">
               Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
@@ -90,6 +80,16 @@ const About = () => {
               games with friends, or doing something behind the scenes in technical theater. Take a look around and
               check out some of my projects!
             </p>
+          </div>
+          <div>
+            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
+              <img
+                src={getProfileImage("about-hero.jpg")}
+                alt="Florian Schwarzinger"
+                loading="lazy"
+                className="w-full h-auto object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </section>
