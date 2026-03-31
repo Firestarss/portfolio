@@ -40,7 +40,7 @@ export const projects: Project[] = [
     showInRandomCommand: false,
     showInRandomButton: false,
     contentLabel: "",
-    content: `Well, you found the secret page. Nice work. Since you went through the trouble, here's a look at what I've got cooking.
+    content: `Well, you found the secret page. Nice work. Since you went through the trouble, here's a look at what's in the pipeline.
 
 ## Rubik's Cube World Record Attempt
 
