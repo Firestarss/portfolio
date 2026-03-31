@@ -29,6 +29,421 @@ export interface Project {
 }
 export const projects: Project[] = [
   {
+    id: "formatting-reference",
+    title: "Formatting Reference",
+    description:
+      "A comprehensive cheat sheet for all available project page formatting options, layouts, and features.",
+    image: getProjectImage("formatting-reference", "hero.svg"),
+    imagePosition: "center 60%",
+    tags: ["Reference", "Documentation"],
+    showInProjects: false,
+    showInTerminal: false,
+    showInRandomCommand: false,
+    showInRandomButton: false,
+    contentLabel: "Formatting Cheat Sheet",
+    techStack: ["React", "TypeScript", "Markdown", "Tailwind CSS", "Framer Motion"],
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    gallery: [
+      { src: "/files/projects/formatting-reference/placeholder-1.svg", alt: "Gallery image A" },
+      { src: "/files/projects/formatting-reference/placeholder-2.svg", alt: "Gallery image B" },
+      { src: "/files/projects/formatting-reference/placeholder-3.svg", alt: "Gallery image C" },
+      { src: "/files/projects/formatting-reference/placeholder-4.svg", alt: "Gallery image D" },
+    ],
+    files: [
+      { name: "example.txt", url: "/files/projects/formatting-reference/example.txt" },
+      { name: "hero.svg", url: "/files/projects/formatting-reference/hero.svg" },
+      { name: "example-code.py", url: "/files/projects/formatting-reference/example.txt" },
+      { name: "design-file.sldprt", url: "/files/projects/formatting-reference/example.txt" },
+      { name: "schematic.kicad_pcb", url: "/files/projects/formatting-reference/example.txt" },
+      { name: "project-archive.zip", url: "/files/projects/formatting-reference/example.txt" },
+    ],
+    challenges: `Here is the **challenges** section. It renders markdown separately from the main content, under its own "Challenges & Solutions" header.
+
+- You can use **bold**, *italics*, and [links](https://example.com) here
+- It supports all the same markdown as the main content
+- This is useful for separating concerns and keeping things organized
+
+> This section only appears if the \`challenges\` field is defined on the project.`,
+    keyFeatures: `This is the **keyFeatures** section. It renders under its own "Key Features" header.
+
+1. Feature one with **bold text**
+2. Feature two with *italic text*
+3. Feature three with \`inline code\`
+
+> This section only appears if the \`keyFeatures\` field is defined on the project.`,
+    lessonsLearned: `This is the **lessonsLearned** section. It renders under its own "Lessons Learned" header.
+
+The key takeaway here is that all three of these optional sections (\`challenges\`, \`keyFeatures\`, \`lessonsLearned\`) work identically. They each:
+
+- Accept markdown content
+- Render with their own heading and separator
+- Only appear when the field is defined
+- Appear below the gallery and video sections`,
+    content: `This page is a comprehensive reference for every formatting option available when creating project pages. It is completely hidden from the projects grid, terminal, and random buttons. Access it directly at \`/#/projects/formatting-reference\`.
+
+---
+
+# Project Interface Fields
+
+Before diving into content formatting, here's every field available on a project:
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| \`id\` | string | Yes | URL slug (e.g. "my-project" becomes \`/#/projects/my-project\`) |
+| \`title\` | string | Yes | Project title displayed on the page and card |
+| \`description\` | string | Yes | Short description shown on the card and below the title |
+| \`image\` | string | Yes | Hero image path. Use \`getProjectImage("id", "hero.jpg")\` |
+| \`imagePosition\` | string | No | CSS object-position for tile/hero cropping (e.g. "center bottom", "center 30%") |
+| \`tags\` | string[] | Yes | Tag chips shown on the card and project page |
+| \`content\` | string | Yes | Main markdown content (the body of the page) |
+| \`contentLabel\` | string | No | Override "Project Description" header. Use \`""\` to hide it entirely |
+| \`techStack\` | string[] | No | Technology badges shown above the content |
+| \`gallery\` | array | No | Clickable image gallery below the content |
+| \`videoUrl\` | string | No | YouTube embed URL for a demo video section |
+| \`files\` | array | No | Downloadable files section with auto-detected icons |
+| \`challenges\` | string | No | Separate markdown section for challenges |
+| \`keyFeatures\` | string | No | Separate markdown section for key features |
+| \`lessonsLearned\` | string | No | Separate markdown section for lessons learned |
+| \`showInProjects\` | boolean | No | Show on the projects grid (defaults true) |
+| \`showInTerminal\` | boolean | No | Show in terminal sub-projects (defaults true) |
+| \`showInRandomCommand\` | boolean | No | Include in terminal random command |
+| \`showInRandomButton\` | boolean | No | Include in projects page random button |
+
+---
+
+# Markdown Text Formatting
+
+## Headings
+
+Use \`#\` through \`######\` for heading levels 1-6. Note: H1 and H2 are the most commonly useful inside project content since the page title is already rendered separately.
+
+## This is an H2
+
+### This is an H3
+
+#### This is an H4
+
+##### This is an H5
+
+###### This is an H6
+
+## Inline Formatting
+
+Regular text looks like this. You can make text **bold with double asterisks**, *italic with single asterisks*, or ***bold and italic with triple asterisks***. You can also use ~~strikethrough with double tildes~~.
+
+Inline \`code\` uses backticks. This is useful for referencing \`variable_names\`, \`file_paths\`, or \`terminal commands\`.
+
+## Links
+
+- [External link](https://example.com) using \`[text](url)\` syntax
+- [Internal link to another project](#/projects/flybox-redesign) using \`[text](#/projects/project-id)\`
+- Raw URLs are NOT auto-linked. Always use the bracket syntax.
+
+## Blockquotes
+
+> This is a blockquote. It renders with an orange left border and muted text.
+>
+> You can have multiple paragraphs inside a blockquote. They're great for callouts, quotes, or important notes.
+
+## Horizontal Rules
+
+Use \`---\` to create a horizontal rule (like the ones separating sections on this page):
+
+---
+
+# Lists
+
+## Unordered Lists
+
+- First item
+- Second item
+  - Nested item A
+  - Nested item B
+    - Deep nested item
+- Third item
+
+## Ordered Lists
+
+1. First step
+2. Second step
+   1. Sub-step A
+   2. Sub-step B
+3. Third step
+
+## Task Lists (Checkboxes)
+
+- [x] Completed task
+- [x] Another completed task
+- [ ] Incomplete task
+- [ ] Another incomplete task
+
+---
+
+# Code
+
+## Inline Code
+
+Use backticks for \`inline code snippets\` within a paragraph.
+
+## Code Blocks
+
+Use triple backticks for multi-line code blocks. You can optionally specify a language for syntax highlighting:
+
+\`\`\`python
+def solve_cube(state):
+    """Example Python code block"""
+    moves = calculate_optimal_moves(state)
+    for move in moves:
+        state = apply_move(state, move)
+    return state
+\`\`\`
+
+\`\`\`rust
+fn main() {
+    let greeting = "Hello from Rust!";
+    println!("{}", greeting);
+}
+\`\`\`
+
+\`\`\`bash
+# Terminal commands
+cd ~/projects/my-robot
+cargo build --release
+./target/release/solver
+\`\`\`
+
+---
+
+# Tables
+
+Tables use the standard GitHub-Flavored Markdown syntax:
+
+| Component | Material | Quantity | Notes |
+|---|---|---|---|
+| Base plate | Aluminum 6061 | 1 | CNC milled |
+| Servo motor | MG996R | 6 | High torque |
+| Gear assembly | PLA | 12 | 3D printed |
+| Microcontroller | Arduino Mega | 1 | Main brain |
+| Camera module | Raspberry Pi Cam v2 | 1 | Color detection |
+
+---
+
+# Images
+
+## Default Markdown Image (Centered, 70% Width)
+
+Use standard markdown syntax. Images without custom styling get the \`markdown-image\` class, which centers them at 70% width with rounded corners and a shadow:
+
+![Placeholder image A](/files/projects/formatting-reference/placeholder-1.svg)
+
+## Full Width Image (Inline HTML)
+
+Use an \`<img>\` tag with \`width: 100%\` to go full width:
+
+<img src="/files/projects/formatting-reference/placeholder-2.svg" alt="Full width image" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+
+## Float Left (Text Wraps Right)
+
+Use \`float: left\` to have text wrap around the right side of an image. Good for mixing images with paragraphs.
+
+<img src="/files/projects/formatting-reference/placeholder-1.svg" alt="Float left" style="float: left; width: 40%; margin: 0 1.5rem 1rem 0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+
+This text wraps around the floated image on the right side. This is a common pattern for project pages where you want to describe something alongside an image without breaking the reading flow. The image takes up 40% of the width, with a margin on the right and bottom to give the text some breathing room. You can adjust the width percentage and margins to taste. Keep in mind that on mobile, floated images can look cramped, so test on smaller screens. If the text is too short, the next section may overlap with the float, so you may need to add a clear div after.
+
+<div style="clear: both;"></div>
+
+**Important:** Always add \`<div style="clear: both;"></div>\` after floated content to prevent the next section from overlapping.
+
+## Float Right (Text Wraps Left)
+
+<img src="/files/projects/formatting-reference/placeholder-2.svg" alt="Float right" style="float: right; width: 45%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+
+Same concept but mirrored. The image floats to the right and text flows on the left. Adjust the width and margins as needed. This pattern is used on the ROV project page for the BlueROV2 image. Alternating between float-left and float-right throughout a page can create a nice visual rhythm.
+
+<div style="clear: both;"></div>
+
+## Side-by-Side Images (image-row)
+
+Wrap images in a \`<div class="image-row">\` to display them side by side. They flex to equal widths with a gap between them:
+
+<div class="image-row">
+
+![Image A](/files/projects/formatting-reference/placeholder-1.svg)
+![Image B](/files/projects/formatting-reference/placeholder-2.svg)
+
+</div>
+
+## Image Grid (image-grid)
+
+Use \`<div class="image-grid">\` for a responsive grid of images. They auto-fit into columns of minimum 200px. Images are cropped to a fixed height of 200px with object-cover:
+
+<div class="image-grid">
+
+![Image A](/files/projects/formatting-reference/placeholder-1.svg)
+![Image B](/files/projects/formatting-reference/placeholder-2.svg)
+![Image C](/files/projects/formatting-reference/placeholder-3.svg)
+![Image D](/files/projects/formatting-reference/placeholder-4.svg)
+
+</div>
+
+## Custom Sized Image (Inline HTML)
+
+You can set any width you want with inline HTML. Here's a 50% width centered image:
+
+<img src="/files/projects/formatting-reference/placeholder-3.svg" alt="Custom 50% width" style="width: 50%; margin: 1.5rem auto; display: block; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+
+---
+
+# Sections Rendered from Separate Fields
+
+The following sections are NOT written in this content field. They are defined as separate fields on the project object and rendered automatically by ProjectDetail.tsx. Scroll down to see them in action:
+
+1. **techStack** - Rendered as badges above the content. This page has: React, TypeScript, Markdown, Tailwind CSS, Framer Motion
+2. **gallery** - Rendered as a clickable 2-column image grid below the content. Click an image to open it in a lightbox dialog.
+3. **videoUrl** - Rendered as an embedded YouTube player. Accepts a YouTube embed URL like \`https://www.youtube.com/embed/VIDEO_ID\`
+4. **files** - Rendered as a downloadable file list with auto-detected icons based on file extension. Supports: CAD files (.sldprt, .step, .stl), code (.py, .cpp, .ino), documents (.pdf), images, video, archives (.zip), and many more.
+5. **challenges** - A separate markdown section with its own header
+6. **keyFeatures** - A separate markdown section with its own header
+7. **lessonsLearned** - A separate markdown section with its own header
+
+---
+
+# Visibility Controls
+
+Control where a project appears using these boolean flags:
+
+\`\`\`typescript
+showInProjects: false,    // Hidden from projects grid
+showInTerminal: false,    // Hidden from terminal sub-projects
+showInRandomCommand: false, // Excluded from terminal 'random'
+showInRandomButton: false,  // Excluded from projects page random button
+\`\`\`
+
+**Visibility combos:**
+- All defaults (or all true): Visible everywhere
+- \`showInProjects: false\`: Terminal-only (like the CLASSIFIED page)
+- Both false: URL-only (like this reference page). Access via \`/#/projects/your-id\`
+- \`showInRandomButton: true\` with \`showInProjects: false\`: Hidden from grid but can appear via random button (surprise!)
+
+---
+
+# Other Features
+
+## contentLabel
+
+Override the "Project Description" section header:
+
+\`\`\`typescript
+contentLabel: "Technical Details",  // Custom header text
+contentLabel: "",                   // Hide the header entirely
+// omit field                       // Default: "Project Description"
+\`\`\`
+
+## imagePosition
+
+Control how the hero image is cropped on both the project card tile and the detail page:
+
+\`\`\`typescript
+imagePosition: "center bottom",  // Focus on the bottom of the image
+imagePosition: "center 30%",     // Focus 30% from the top
+imagePosition: "left center",    // Focus on the left side
+// omit field                     // Default: center center
+\`\`\`
+
+## Internal Cross-References
+
+Link to other projects using hash-router paths:
+
+\`\`\`markdown
+Check out my [FlyBox Redesign](#/projects/flybox-redesign) project.
+\`\`\`
+
+Result: Check out my [FlyBox Redesign](#/projects/flybox-redesign) project.
+
+---
+
+# Quick Copy-Paste Templates
+
+## Minimal Project
+
+\`\`\`typescript
+{
+  id: "my-project",
+  title: "My New Project",
+  description: "A short description for the card.",
+  image: getProjectImage("my-project", "hero.jpg"),
+  tags: ["Robotics", "Software"],
+  content: \\\`Your markdown content here.\\\`,
+},
+\`\`\`
+
+## Full Featured Project
+
+\`\`\`typescript
+{
+  id: "my-project",
+  title: "My New Project",
+  description: "A short description for the card.",
+  image: getProjectImage("my-project", "hero.jpg"),
+  imagePosition: "center 40%",
+  tags: ["Robotics", "Software"],
+  contentLabel: "Technical Breakdown",
+  techStack: ["Python", "ROS", "OpenCV", "Arduino"],
+  videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+  gallery: [
+    { src: "/files/projects/my-project/photo1.jpg", alt: "Description" },
+    { src: "/files/projects/my-project/photo2.jpg", alt: "Description" },
+  ],
+  files: [
+    { name: "design.sldprt", url: "/files/projects/my-project/design.sldprt" },
+    { name: "code.py", url: "/files/projects/my-project/code.py" },
+  ],
+  challenges: \\\`Markdown for the challenges section.\\\`,
+  keyFeatures: \\\`Markdown for the key features section.\\\`,
+  lessonsLearned: \\\`Markdown for the lessons learned section.\\\`,
+  content: \\\`Your main markdown content here.\\\`,
+},
+\`\`\`
+
+## Float Image Template
+
+\`\`\`html
+<img src="/files/projects/YOUR-PROJECT/image.jpg"
+  alt="Description"
+  style="float: left; width: 40%; margin: 0 1.5rem 1rem 0;
+         border-radius: 8px;
+         box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+
+Your text wraps here...
+
+<div style="clear: both;"></div>
+\`\`\`
+
+## Side-by-Side Images Template
+
+\`\`\`html
+<div class="image-row">
+
+![Alt text 1](/files/projects/YOUR-PROJECT/image1.jpg)
+![Alt text 2](/files/projects/YOUR-PROJECT/image2.jpg)
+
+</div>
+\`\`\`
+
+## Image Grid Template
+
+\`\`\`html
+<div class="image-grid">
+
+![Alt 1](/files/projects/YOUR-PROJECT/img1.jpg)
+![Alt 2](/files/projects/YOUR-PROJECT/img2.jpg)
+![Alt 3](/files/projects/YOUR-PROJECT/img3.jpg)
+![Alt 4](/files/projects/YOUR-PROJECT/img4.jpg)
+
+</div>
+\`\`\``,
+  },
+  {
     id: "adventure",
     title: "[ CLASSIFIED ]",
     description:
