@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="50%" style="stop-color:#111118"/>
+      <stop offset="100%" style="stop-color:#0a0a0f"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f97316" stroke-width="0.3" opacity="0.12"/>
+    </pattern>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#000" stroke-width="1" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect width="1600" height="900" fill="url(#scanlines)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="800" cy="450" r="280" fill="none" stroke="#f97316" stroke-width="1" opacity="0.15"/>
+  <circle cx="800" cy="450" r="320" fill="none" stroke="#f97316" stroke-width="0.5" opacity="0.08" stroke-dasharray="8 12"/>
+  <circle cx="800" cy="450" r="200" fill="none" stroke="#f97316" stroke-width="0.5" opacity="0.1" stroke-dasharray="4 8"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#f97316" stroke-width="2" opacity="0.4">
+    <!-- Top left -->
+    <line x1="80" y1="80" x2="80" y2="140"/>
+    <line x1="80" y1="80" x2="140" y2="80"/>
+    <!-- Top right -->
+    <line x1="1520" y1="80" x2="1520" y2="140"/>
+    <line x1="1520" y1="80" x2="1460" y2="80"/>
+    <!-- Bottom left -->
+    <line x1="80" y1="820" x2="80" y2="760"/>
+    <line x1="80" y1="820" x2="140" y2="820"/>
+    <!-- Bottom right -->
+    <line x1="1520" y1="820" x2="1520" y2="760"/>
+    <line x1="1520" y1="820" x2="1460" y2="820"/>
+  </g>
+
+  <!-- Crosshair -->
+  <g stroke="#f97316" opacity="0.2" stroke-width="0.5">
+    <line x1="600" y1="450" x2="1000" y2="450"/>
+    <line x1="800" y1="300" x2="800" y2="600"/>
+  </g>
+
+  <!-- Top classification bar -->
+  <rect x="540" y="180" width="520" height="40" rx="4" fill="#f97316" opacity="0.12" stroke="#f97316" stroke-width="1" opacity="0.3"/>
+  <text x="800" y="207" text-anchor="middle" font-family="monospace" font-size="18" fill="#f97316" letter-spacing="8" opacity="0.7">TOP SECRET</text>
+
+  <!-- Main title -->
+  <text x="800" y="420" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="72" fill="#f97316" filter="url(#glow)" letter-spacing="4">[ CLASSIFIED ]</text>
+
+  <!-- Subtitle -->
+  <text x="800" y="480" text-anchor="middle" font-family="monospace" font-size="22" fill="#fafafa" opacity="0.5" letter-spacing="6">AUTHORIZED PERSONNEL ONLY</text>
+
+  <!-- Clearance level -->
+  <text x="800" y="540" text-anchor="middle" font-family="monospace" font-size="16" fill="#f97316" opacity="0.35" letter-spacing="3">CLEARANCE LEVEL: CURIOUS</text>
+
+  <!-- Bottom decorative text -->
+  <text x="800" y="750" text-anchor="middle" font-family="monospace" font-size="13" fill="#f97316" opacity="0.2" letter-spacing="2">PROJECT BACKLOG // EYES ONLY // DO NOT DISTRIBUTE</text>
+
+  <!-- Small decorative dots -->
+  <circle cx="660" cy="360" r="3" fill="#f97316" opacity="0.3"/>
+  <circle cx="940" cy="360" r="3" fill="#f97316" opacity="0.3"/>
+  <circle cx="660" cy="560" r="3" fill="#f97316" opacity="0.3"/>
+  <circle cx="940" cy="560" r="3" fill="#f97316" opacity="0.3"/>
+</svg>
