@@ -42,16 +42,20 @@ const About = () => {
       transition={fadeInAnimation.transition}
       className="max-w-4xl mx-auto"
     >
+      {/* Name & Title */}
+      <div className="mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold mb-2 text-foreground whitespace-nowrap">
+          Florian Schwarzinger
+        </h1>
+        <h2 className="text-xl md:text-2xl text-primary">
+          Robotics Engineer
+        </h2>
+      </div>
+
       {/* About: Text left, photo + buttons right */}
       <section className="mb-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2 text-foreground whitespace-nowrap">
-              Florian Schwarzinger
-            </h1>
-            <h2 className="text-xl md:text-2xl text-primary">
-              Robotics Engineer
-            </h2>
             <p className="text-muted-foreground leading-relaxed">
               Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
               robotics is that it touches a little bit of everything (mechanical, electrical, software) and I like to be
