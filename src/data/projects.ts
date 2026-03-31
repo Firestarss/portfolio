@@ -5,6 +5,7 @@ export interface Project {
   title: string;
   description: string; // Short description
   image: string; // Hero image
+  imagePosition?: string; // CSS object-position for tile cropping (e.g. "center 30%", "bottom")
   tags: string[];
 
   // Main story content (markdown) - the heart of the page
@@ -128,6 +129,7 @@ Check out the following links to see more about this project as well as the part
     description:
       "Summer internship at UW Applied Physics Lab making underwater drones autonomously follow each other using OpenCV and ROS",
     image: getProjectImage("autonomous-submersible-rov", "hero.jpg"),
+    imagePosition: "center 70%",
     tags: ["Robotics", "Software", "Computer Vision"],
     content: `During the summer of 2021, I got the privilege of working for the Applied Physics Laboratory at the University of Washington. Our project was to take 2 commercially available underwater drones (Remotely Operated Vehicles or ROVs) and see if they may be usable for use in further research applications. To demonstrate this, we were given the task of making one ROV follow the other around autonomously utilizing OpenCV and ROS. We also needed to determine the feasibility of integrating additional sensors into the ROV.
 
