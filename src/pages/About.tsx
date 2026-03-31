@@ -66,7 +66,7 @@ const About = () => {
 
       {/* About: Photo + text side by side */}
       <section className="mb-12 max-w-2xl mx-auto">
-        <div className="rounded-lg overflow-hidden mb-8 shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)] max-w-md mx-auto">
+        <div className="rounded-lg overflow-hidden mb-8 shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)] max-w-lg mx-auto">
           <img
             src={getProfileImage("about-hero.jpg")}
             alt="Florian Schwarzinger"
