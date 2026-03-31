@@ -161,6 +161,7 @@ const ProjectDetail = () => {
           <img
             src={project.image}
             alt={`${project.title} - Hero image showcasing the project`}
+            style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
             className="object-cover w-full h-full"
           />
         </AspectRatio>

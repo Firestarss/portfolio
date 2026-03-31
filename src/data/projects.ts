@@ -6,7 +6,6 @@ export interface Project {
   description: string; // Short description
   image: string; // Hero image
   imagePosition?: string; // CSS object-position for tile cropping (e.g. "center 30%", "bottom")
-  imageScale?: number; // Scale for tile image (e.g. 0.8 to zoom out, 1.2 to zoom in)
   tags: string[];
 
   // Main story content (markdown) - the heart of the page
@@ -105,7 +104,6 @@ We're currently in the prototyping phase, testing various actuator configuration
     description:
       "Senior capstone project redesigning lab equipment used in Nobel Prize-winning circadian rhythm research at Brandeis University",
     image: getProjectImage("flybox-redesign", "hero.jpg"),
-    imageScale: 0.75,
     tags: ["Mechanical", "Electrical"],
     content: `For my senior capstone project, I worked on a team of Olin students in collaboration with Brandeis University to redesign a piece of laboratory equipment called the FlyBox. The FlyBox was designed by Brandeis to monitor and track the behavior of fruit flies over multi-day periods for circadian rhythm research. Using specific lights in the FlyBox, researchers were able to use optogenetics to control individual neurons in the flies' brains and see how their sleep patterns changed. The device was created to replace existing methods of fruit fly behavior observation, offering more detailed and accurate data at a lower cost. Already, the FlyBox has been used to generate data for Nobel Prize-winning research on the circadian rhythm. However, the original version of the FlyBox was just a prototype. It lacked the durability and polish needed for long term use. Furthermore, Brandeis wished for the FlyBox to be created from a simple open source kit, able to be assembled by anybody. In a kit form, the FlyBox could be shared and used by partner institutions around the world. The goal of this project was to redesign the FlyBox from a functional prototype into a polished product that was more robust, able to be assembled from a kit, and be user friendly.
 
