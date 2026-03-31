@@ -441,7 +441,507 @@ Your text wraps here...
 ![Alt 4](/files/projects/YOUR-PROJECT/img4.jpg)
 
 </div>
-\`\`\``,
+\`\`\`
+
+---
+
+# Advanced Techniques & Creative Combinations
+
+Everything below goes beyond the basics. These are creative ways to combine the available tools to build richer, more interesting project pages.
+
+---
+
+## Callout Boxes
+
+You can create styled callout/info/warning boxes using inline HTML divs. These are great for drawing attention to important details:
+
+<div style="background: hsl(142 76% 36% / 0.1); border-left: 4px solid hsl(142 76% 36%); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;">
+<strong style="color: hsl(142 76% 36%);">SUCCESS</strong><br/>
+The robot completed a full solve in under 2 seconds on the first real-hardware test.
+</div>
+
+<div style="background: hsl(48 96% 53% / 0.1); border-left: 4px solid hsl(48 96% 53%); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;">
+<strong style="color: hsl(48 96% 53%);">NOTE</strong><br/>
+This section requires the latest firmware version. Check the files section below for the update.
+</div>
+
+<div style="background: hsl(0 84% 60% / 0.1); border-left: 4px solid hsl(0 84% 60%); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;">
+<strong style="color: hsl(0 84% 60%);">WARNING</strong><br/>
+Do not exceed 12V input. The motor driver will release magic smoke.
+</div>
+
+<div style="background: hsl(24 100% 50% / 0.1); border-left: 4px solid hsl(24 100% 50%); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;">
+<strong style="color: hsl(24 100% 50%);">TIP</strong><br/>
+Combining a callout box right before a code block creates a nice "here's something important, and here's how to do it" flow.
+</div>
+
+---
+
+## Stat/Metric Highlight Cards
+
+Use inline HTML to create eye-catching stat blocks for key project numbers:
+
+<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+<div style="flex: 1; min-width: 140px; background: hsl(24 100% 50% / 0.08); border: 1px solid hsl(24 100% 50% / 0.2); border-radius: 12px; padding: 1.25rem; text-align: center;">
+<div style="font-size: 2.5rem; font-weight: bold; color: hsl(24 100% 50%);">1.8s</div>
+<div style="font-size: 0.85rem; opacity: 0.7;">Solve Time</div>
+</div>
+<div style="flex: 1; min-width: 140px; background: hsl(24 100% 50% / 0.08); border: 1px solid hsl(24 100% 50% / 0.2); border-radius: 12px; padding: 1.25rem; text-align: center;">
+<div style="font-size: 2.5rem; font-weight: bold; color: hsl(24 100% 50%);">14</div>
+<div style="font-size: 0.85rem; opacity: 0.7;">Avg Moves</div>
+</div>
+<div style="flex: 1; min-width: 140px; background: hsl(24 100% 50% / 0.08); border: 1px solid hsl(24 100% 50% / 0.2); border-radius: 12px; padding: 1.25rem; text-align: center;">
+<div style="font-size: 2.5rem; font-weight: bold; color: hsl(24 100% 50%);">6</div>
+<div style="font-size: 0.85rem; opacity: 0.7;">Servo Motors</div>
+</div>
+<div style="flex: 1; min-width: 140px; background: hsl(24 100% 50% / 0.08); border: 1px solid hsl(24 100% 50% / 0.2); border-radius: 12px; padding: 1.25rem; text-align: center;">
+<div style="font-size: 2.5rem; font-weight: bold; color: hsl(24 100% 50%);">100%</div>
+<div style="font-size: 0.85rem; opacity: 0.7;">Success Rate</div>
+</div>
+</div>
+
+---
+
+## Collapsible Sections (Details/Summary)
+
+HTML5 \`<details>\` elements work in markdown and let you create expandable/collapsible sections. Great for hiding verbose details without cluttering the page:
+
+<details>
+<summary style="cursor: pointer; font-weight: bold; color: hsl(24 100% 50%); margin-bottom: 0.5rem;">Click to expand: Full Bill of Materials</summary>
+
+| Part | Qty | Source | Cost |
+|---|---|---|---|
+| MG996R Servo | 6 | Amazon | $42 |
+| Arduino Mega | 1 | Adafruit | $46 |
+| Pi Camera v2 | 1 | PiShop | $30 |
+| 3D Printed Frame | 1 | In-house | $8 |
+| Bearings (608ZZ) | 12 | McMaster | $24 |
+| **Total** | | | **$150** |
+
+</details>
+
+<details>
+<summary style="cursor: pointer; font-weight: bold; color: hsl(24 100% 50%); margin-bottom: 0.5rem;">Click to expand: Wiring Diagram Notes</summary>
+
+The servo power rail must be separate from the logic power. Use a dedicated 6V 5A supply for the servos and power the Arduino via USB or a separate 5V regulator. Connect all grounds together. PWM signals go to pins 2-7 on the Mega.
+
+\`\`\`
+Arduino Mega Pin Layout:
+  Pin 2  -> Servo 1 (Front face)
+  Pin 3  -> Servo 2 (Back face)
+  Pin 4  -> Servo 3 (Left face)
+  Pin 5  -> Servo 4 (Right face)
+  Pin 6  -> Servo 5 (Top face)
+  Pin 7  -> Servo 6 (Bottom face)
+  Pin 13 -> Status LED
+\`\`\`
+
+</details>
+
+---
+
+## Images with Captions
+
+Wrap an image and a caption in a styled div for a cleaner presentation:
+
+<div style="text-align: center; margin: 2rem 0;">
+<img src="/files/projects/formatting-reference/placeholder-1.svg" alt="Captioned image" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px -2px rgba(0,0,0,0.4);" />
+<p style="font-size: 0.85rem; color: hsl(240 5% 65%); margin-top: 0.75rem; font-style: italic;">Figure 1: The prototype during initial testing. Note the cable management.</p>
+</div>
+
+---
+
+## Before/After Comparison
+
+Place two images side by side with labels for a visual comparison:
+
+<div style="display: flex; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap;">
+<div style="flex: 1; min-width: 250px; text-align: center;">
+<div style="font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: hsl(0 84% 60%); margin-bottom: 0.5rem;">Before</div>
+<img src="/files/projects/formatting-reference/placeholder-1.svg" alt="Before" style="width: 100%; border-radius: 8px; border: 2px solid hsl(0 84% 60% / 0.3); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<p style="font-size: 0.8rem; color: hsl(240 5% 65%); margin-top: 0.5rem;">Rev 1: Janky prototype held together with hope</p>
+</div>
+<div style="flex: 1; min-width: 250px; text-align: center;">
+<div style="font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: hsl(142 76% 36%); margin-bottom: 0.5rem;">After</div>
+<img src="/files/projects/formatting-reference/placeholder-2.svg" alt="After" style="width: 100%; border-radius: 8px; border: 2px solid hsl(142 76% 36% / 0.3); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<p style="font-size: 0.8rem; color: hsl(240 5% 65%); margin-top: 0.5rem;">Rev 3: Properly machined and assembled</p>
+</div>
+</div>
+
+---
+
+## Timeline / Progress Steps
+
+Create a visual timeline for project milestones or build steps:
+
+<div style="border-left: 3px solid hsl(24 100% 50% / 0.4); margin: 1.5rem 0; padding-left: 1.5rem;">
+
+<div style="position: relative; margin-bottom: 2rem;">
+<div style="position: absolute; left: -2.05rem; top: 0.15rem; width: 14px; height: 14px; background: hsl(24 100% 50%); border-radius: 50%;"></div>
+
+**Week 1-2: Research & Design**
+
+Surveyed existing Rubik's cube solving robots. Studied Kociemba's algorithm and God's number. Settled on a 6-servo design with direct face rotation.
+</div>
+
+<div style="position: relative; margin-bottom: 2rem;">
+<div style="position: absolute; left: -2.05rem; top: 0.15rem; width: 14px; height: 14px; background: hsl(24 100% 50%); border-radius: 50%;"></div>
+
+**Week 3-4: Mechanical Build**
+
+Designed the frame in SolidWorks. 3D printed all structural components. Assembled servo mounts with press-fit bearings.
+</div>
+
+<div style="position: relative; margin-bottom: 2rem;">
+<div style="position: absolute; left: -2.05rem; top: 0.15rem; width: 14px; height: 14px; background: hsl(24 100% 50%); border-radius: 50%;"></div>
+
+**Week 5-6: Software Integration**
+
+Wrote the solving algorithm in Rust. Integrated Pi Camera for color detection using OpenCV. Achieved first successful autonomous solve.
+</div>
+
+<div style="position: relative; margin-bottom: 0.5rem;">
+<div style="position: absolute; left: -2.05rem; top: 0.15rem; width: 14px; height: 14px; background: hsl(24 100% 50%); border-radius: 50%; box-shadow: 0 0 8px hsl(24 100% 50% / 0.6);"></div>
+
+**Week 7+: Optimization & Testing**
+
+Fine-tuning servo speeds, reducing solve time, and stress testing reliability. Current record: 1.8s average solve.
+</div>
+
+</div>
+
+---
+
+## Multi-Column Text Layout
+
+Use CSS grid to create newspaper-style multi-column layouts for dense text:
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
+<div>
+
+**Mechanical Design**
+
+The frame is built from 3D printed PLA with aluminum reinforcement at the servo mounts. Each face is driven by a single MG996R servo through a custom gear reduction. Bearings at every rotation point keep friction low and ensure smooth, repeatable motion.
+
+</div>
+<div>
+
+**Software Architecture**
+
+The solving pipeline runs on a Raspberry Pi 4. Color detection uses OpenCV with HSV thresholding. The solver implements a modified Kociemba two-phase algorithm compiled to native ARM code via Rust for maximum performance.
+
+</div>
+</div>
+
+---
+
+## Feature Cards
+
+Create a grid of feature highlight cards:
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+
+<div style="background: hsl(240 10% 10%); border: 1px solid hsl(240 5% 20%); border-radius: 12px; padding: 1.25rem;">
+<div style="font-size: 1.75rem; margin-bottom: 0.5rem;">&#9881;&#65039;</div>
+<div style="font-weight: bold; margin-bottom: 0.25rem;">Modular Design</div>
+<div style="font-size: 0.85rem; opacity: 0.7;">Every component is individually replaceable. Swap a servo in under 5 minutes.</div>
+</div>
+
+<div style="background: hsl(240 10% 10%); border: 1px solid hsl(240 5% 20%); border-radius: 12px; padding: 1.25rem;">
+<div style="font-size: 1.75rem; margin-bottom: 0.5rem;">&#128640;</div>
+<div style="font-weight: bold; margin-bottom: 0.25rem;">Blazing Fast</div>
+<div style="font-size: 0.85rem; opacity: 0.7;">Rust-powered solver finds the optimal solution in under 50ms.</div>
+</div>
+
+<div style="background: hsl(240 10% 10%); border: 1px solid hsl(240 5% 20%); border-radius: 12px; padding: 1.25rem;">
+<div style="font-size: 1.75rem; margin-bottom: 0.5rem;">&#128065;&#65039;</div>
+<div style="font-weight: bold; margin-bottom: 0.25rem;">Computer Vision</div>
+<div style="font-size: 0.85rem; opacity: 0.7;">Automatic color detection via OpenCV. No manual input required.</div>
+</div>
+
+<div style="background: hsl(240 10% 10%); border: 1px solid hsl(240 5% 20%); border-radius: 12px; padding: 1.25rem;">
+<div style="font-size: 1.75rem; margin-bottom: 0.5rem;">&#128295;</div>
+<div style="font-weight: bold; margin-bottom: 0.25rem;">Open Source</div>
+<div style="font-size: 0.85rem; opacity: 0.7;">Full CAD files, firmware, and solver code available for download.</div>
+</div>
+
+</div>
+
+---
+
+## Progress Bars
+
+Visualize completion, skill levels, or any percentage-based data:
+
+<div style="margin: 1.5rem 0;">
+
+<div style="margin-bottom: 1rem;">
+<div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem; font-size: 0.85rem;">
+<span>Mechanical Design</span>
+<span style="opacity: 0.6;">95%</span>
+</div>
+<div style="background: hsl(240 5% 15%); border-radius: 8px; height: 10px; overflow: hidden;">
+<div style="background: hsl(24 100% 50%); height: 100%; width: 95%; border-radius: 8px;"></div>
+</div>
+</div>
+
+<div style="margin-bottom: 1rem;">
+<div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem; font-size: 0.85rem;">
+<span>Software</span>
+<span style="opacity: 0.6;">80%</span>
+</div>
+<div style="background: hsl(240 5% 15%); border-radius: 8px; height: 10px; overflow: hidden;">
+<div style="background: hsl(24 100% 50%); height: 100%; width: 80%; border-radius: 8px;"></div>
+</div>
+</div>
+
+<div style="margin-bottom: 1rem;">
+<div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem; font-size: 0.85rem;">
+<span>Testing & Validation</span>
+<span style="opacity: 0.6;">60%</span>
+</div>
+<div style="background: hsl(240 5% 15%); border-radius: 8px; height: 10px; overflow: hidden;">
+<div style="background: hsl(24 100% 50%); height: 100%; width: 60%; border-radius: 8px;"></div>
+</div>
+</div>
+
+<div style="margin-bottom: 1rem;">
+<div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem; font-size: 0.85rem;">
+<span>Documentation</span>
+<span style="opacity: 0.6;">30%</span>
+</div>
+<div style="background: hsl(240 5% 15%); border-radius: 8px; height: 10px; overflow: hidden;">
+<div style="background: hsl(24 100% 50%); height: 100%; width: 30%; border-radius: 8px;"></div>
+</div>
+</div>
+
+</div>
+
+---
+
+## Pull Quote
+
+A large, styled quote for visual emphasis. Great for breaking up long text sections:
+
+<div style="margin: 2.5rem 1rem; text-align: center;">
+<div style="font-size: 1.6rem; font-style: italic; color: hsl(24 100% 50%); line-height: 1.5; max-width: 600px; margin: 0 auto;">"The robot solved it faster than I could scramble it. That's when I knew we had something."</div>
+<div style="margin-top: 0.75rem; font-size: 0.85rem; opacity: 0.5;">- Florian, after the first successful test</div>
+</div>
+
+---
+
+## Magazine-Style Alternating Layout
+
+Alternate float directions with text to create a flowing, editorial feel. This is how professional portfolios often present build logs:
+
+<img src="/files/projects/formatting-reference/placeholder-1.svg" alt="Step 1" style="float: left; width: 38%; margin: 0.5rem 1.5rem 1rem 0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+
+### Step 1: Frame Assembly
+
+The frame was the first thing to come together. I started with the 3D printed base plate and worked my way up, mounting each servo in sequence. The key challenge here was getting the alignment right. Even a fraction of a degree of misalignment in the servo mounts would cause the faces to bind during rotation. I ended up printing alignment jigs to ensure everything was perfectly square.
+
+<div style="clear: both;"></div>
+
+<img src="/files/projects/formatting-reference/placeholder-2.svg" alt="Step 2" style="float: right; width: 38%; margin: 0.5rem 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+
+### Step 2: Electronics Integration
+
+With the frame built, I moved onto wiring. Each servo needs its own PWM line from the Arduino, plus shared power and ground. I designed a custom breakout board to keep things clean. The camera mounts directly above the cube on a 3D printed arm, angled to see all visible faces in a single frame.
+
+<div style="clear: both;"></div>
+
+<img src="/files/projects/formatting-reference/placeholder-3.svg" alt="Step 3" style="float: left; width: 38%; margin: 0.5rem 1.5rem 1rem 0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+
+### Step 3: Software Bringup
+
+The first test was just making each servo rotate 90 degrees reliably. Then came the color detection pipeline, then the solver integration. Each layer added complexity but also made the project feel more alive. The moment the robot made its first autonomous move was deeply satisfying.
+
+<div style="clear: both;"></div>
+
+---
+
+## Inline Status Badges
+
+Use colored spans to indicate status, difficulty, or categories inline with text:
+
+The motor controller is <span style="background: hsl(142 76% 36% / 0.2); color: hsl(142 76% 36%); padding: 2px 8px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;">COMPLETE</span> and the firmware is <span style="background: hsl(48 96% 53% / 0.2); color: hsl(48 96% 53%); padding: 2px 8px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;">IN PROGRESS</span> while the housing redesign is <span style="background: hsl(0 84% 60% / 0.2); color: hsl(0 84% 60%); padding: 2px 8px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;">BLOCKED</span> waiting on new bearings.
+
+---
+
+## Labeled Image Grid (Gallery in Content)
+
+Combine image-grid with captions for a more informative inline gallery:
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+<div style="text-align: center;">
+<img src="/files/projects/formatting-reference/placeholder-1.svg" alt="CAD Model" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<p style="font-size: 0.8rem; color: hsl(240 5% 65%); margin-top: 0.5rem;">CAD model in SolidWorks</p>
+</div>
+<div style="text-align: center;">
+<img src="/files/projects/formatting-reference/placeholder-2.svg" alt="3D Print" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<p style="font-size: 0.8rem; color: hsl(240 5% 65%); margin-top: 0.5rem;">Fresh off the print bed</p>
+</div>
+<div style="text-align: center;">
+<img src="/files/projects/formatting-reference/placeholder-3.svg" alt="Assembly" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<p style="font-size: 0.8rem; color: hsl(240 5% 65%); margin-top: 0.5rem;">Final assembly with all servos</p>
+</div>
+</div>
+
+---
+
+## Nested Blockquotes
+
+Blockquotes inside blockquotes for layered commentary:
+
+> **From the project log:**
+>
+> The first run was a disaster. The servos were jittering so badly the cube fell out.
+>
+> > **Update (2 days later):** Turns out the PWM frequency was wrong. Switched from 60Hz to 50Hz and the jitter disappeared completely. Sometimes the fix is embarrassingly simple.
+> >
+> > > **Note to self:** Always check the servo datasheet BEFORE wiring things up.
+
+---
+
+## Spec Table with Row Highlights
+
+Use inline styles to highlight specific rows in a table:
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+<thead>
+<tr style="border-bottom: 2px solid hsl(240 5% 20%);">
+<th style="text-align: left; padding: 0.75rem; font-weight: 600;">Specification</th>
+<th style="text-align: left; padding: 0.75rem; font-weight: 600;">Target</th>
+<th style="text-align: left; padding: 0.75rem; font-weight: 600;">Achieved</th>
+<th style="text-align: left; padding: 0.75rem; font-weight: 600;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid hsl(240 5% 15%);">
+<td style="padding: 0.75rem;">Solve Time</td>
+<td style="padding: 0.75rem;">&lt; 3.0s</td>
+<td style="padding: 0.75rem;">1.8s</td>
+<td style="padding: 0.75rem;"><span style="color: hsl(142 76% 36%);">&#10003; Exceeded</span></td>
+</tr>
+<tr style="border-bottom: 1px solid hsl(240 5% 15%); background: hsl(24 100% 50% / 0.05);">
+<td style="padding: 0.75rem;">Solve Rate</td>
+<td style="padding: 0.75rem;">99%</td>
+<td style="padding: 0.75rem;">100%</td>
+<td style="padding: 0.75rem;"><span style="color: hsl(142 76% 36%);">&#10003; Exceeded</span></td>
+</tr>
+<tr style="border-bottom: 1px solid hsl(240 5% 15%);">
+<td style="padding: 0.75rem;">Weight</td>
+<td style="padding: 0.75rem;">&lt; 2kg</td>
+<td style="padding: 0.75rem;">1.4kg</td>
+<td style="padding: 0.75rem;"><span style="color: hsl(142 76% 36%);">&#10003; Met</span></td>
+</tr>
+<tr style="border-bottom: 1px solid hsl(240 5% 15%); background: hsl(24 100% 50% / 0.05);">
+<td style="padding: 0.75rem;">Cost</td>
+<td style="padding: 0.75rem;">&lt; $200</td>
+<td style="padding: 0.75rem;">$150</td>
+<td style="padding: 0.75rem;"><span style="color: hsl(142 76% 36%);">&#10003; Under budget</span></td>
+</tr>
+<tr>
+<td style="padding: 0.75rem;">Noise Level</td>
+<td style="padding: 0.75rem;">&lt; 60dB</td>
+<td style="padding: 0.75rem;">72dB</td>
+<td style="padding: 0.75rem;"><span style="color: hsl(0 84% 60%);">&#10007; Needs work</span></td>
+</tr>
+</tbody>
+</table>
+
+---
+
+## Code + Explanation Side-by-Side
+
+Float a code concept next to its explanation:
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0; align-items: start;">
+<div>
+
+\`\`\`python
+def detect_colors(frame):
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    colors = {}
+    for region in FACE_REGIONS:
+        roi = hsv[region.y:region.y+region.h,
+                   region.x:region.x+region.w]
+        dominant = get_dominant_color(roi)
+        colors[region.name] = dominant
+
+    return colors
+\`\`\`
+
+</div>
+<div>
+
+**How Color Detection Works**
+
+The camera captures a frame, which gets converted to HSV color space (better for color detection than RGB). For each of the 9 squares on a visible face, we extract a small region of interest and find the dominant color using histogram analysis.
+
+The key insight was using HSV instead of RGB. Lighting changes affect the V (value) channel but leave H (hue) relatively stable, making detection much more robust.
+
+</div>
+</div>
+
+---
+
+## Three-Column Image Layout
+
+You're not limited to two columns. Use CSS grid for three or more:
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0;">
+<div style="text-align: center;">
+<img src="/files/projects/formatting-reference/placeholder-1.svg" alt="Rev 1" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<p style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">Rev 1</p>
+</div>
+<div style="text-align: center;">
+<img src="/files/projects/formatting-reference/placeholder-2.svg" alt="Rev 2" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<p style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">Rev 2</p>
+</div>
+<div style="text-align: center;">
+<img src="/files/projects/formatting-reference/placeholder-3.svg" alt="Rev 3" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
+<p style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">Rev 3 (Final)</p>
+</div>
+</div>
+
+---
+
+## Combination: Callout + Code + Image
+
+Here's how these pieces work together in a realistic scenario. This is the kind of flow you'd use in a real project writeup:
+
+<div style="background: hsl(48 96% 53% / 0.1); border-left: 4px solid hsl(48 96% 53%); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;">
+<strong style="color: hsl(48 96% 53%);">KEY DISCOVERY</strong><br/>
+The servo timing was off by 2ms, causing a cascade of missed moves. The fix was a single line change.
+</div>
+
+\`\`\`rust
+// Before (broken): fixed 20ms delay
+thread::sleep(Duration::from_millis(20));
+
+// After (working): calculate based on rotation angle
+let delay = (angle as f64 / 90.0 * 25.0) as u64;
+thread::sleep(Duration::from_millis(delay));
+\`\`\`
+
+<div style="display: flex; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap;">
+<div style="flex: 1; min-width: 250px; text-align: center;">
+<img src="/files/projects/formatting-reference/placeholder-1.svg" alt="Before fix" style="width: 100%; border-radius: 8px; border: 2px solid hsl(0 84% 60% / 0.3);" />
+<p style="font-size: 0.8rem; color: hsl(0 84% 60%); margin-top: 0.5rem;">Before: Cube misaligned after move sequence</p>
+</div>
+<div style="flex: 1; min-width: 250px; text-align: center;">
+<img src="/files/projects/formatting-reference/placeholder-2.svg" alt="After fix" style="width: 100%; border-radius: 8px; border: 2px solid hsl(142 76% 36% / 0.3);" />
+<p style="font-size: 0.8rem; color: hsl(142 76% 36%); margin-top: 0.5rem;">After: Clean, precise rotations every time</p>
+</div>
+</div>
+
+That single change dropped the error rate from 15% to 0%. Sometimes the best optimizations are the simplest ones.
+
+---
+
+*End of formatting reference. If you think of a layout or style that isn't covered here, it's probably possible with inline HTML and CSS. Go wild.*`,
   },
   {
     id: "adventure",
