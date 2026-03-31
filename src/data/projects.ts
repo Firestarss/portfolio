@@ -191,7 +191,7 @@ For my project, I wanted to focus on optimizing the overall runtime of the progr
     title: "2x2 Rubik's Cube Solving Robot",
     description:
       "Winning submission for the MakeHarvard 2020 hackathon - a robot that solves a 2x2 Rubik's Cube autonomously",
-    image: getProjectImage("2x2-cube-solving-robot", "hero.jpg"),
+    image: getProjectImage("2x2-cube-solving-robot", "hero.png"),
     tags: ["Software", "Robotics"],
     content: `<img src="/files/projects/2x2-cube-solving-robot/Dum-E.jpg" alt="Dum-E Robot" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
