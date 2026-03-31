@@ -27,8 +27,8 @@ const App = () => (
             <Route path="projects/:id" element={<ProjectDetail />} />
             <Route path="contact" element={<Contact />} />
             <Route path="resume" element={<Resume />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
     </TooltipProvider>

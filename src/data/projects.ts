@@ -1,4 +1,4 @@
-import { getImageUrl, getProjectImage, getFileUrl } from "@/lib/files";
+import { getProjectImage } from "@/lib/files";
 
 export interface Project {
   id: string;
@@ -61,51 +61,13 @@ That's the backlog for now. If any of these end up becoming real projects, they'
 <p class="invisible-ink" style="margin-top: 6rem; text-align: center; font-size: 1.1rem; font-family: monospace; user-select: none;">Created by Florian Schwarzinger</p>`,
   },
   {
-    id: "wip-exoskeleton-v2",
-    title: "Advanced Exoskeleton System v2",
-    description:
-      "Next-generation powered exoskeleton with enhanced force feedback and adaptive control. Currently in development.",
-    image: getProjectImage("exoskeleton", "hero.jpg"),
-    tags: ["Robotics", "Biomechanics", "Control Systems", "WIP"],
-    showInProjects: false,
-    showInTerminal: false,
-    content: `# Advanced Exoskeleton System v2
-
-**Status**: Work in Progress
-
-This project is currently under development and not yet ready for public display. However, you can preview the content structure here.
-
-## Overview
-
-Building on the success of the original exoskeleton project, version 2 aims to incorporate:
-
-- Advanced haptic feedback systems
-- Machine learning-based gait prediction
-- Lighter composite materials
-- Extended battery life (8+ hours)
-- Modular design for different use cases
-
-## Current Development Phase
-
-We're currently in the prototyping phase, testing various actuator configurations and control algorithms. Early results show promising improvements in both user comfort and system efficiency.
-
-## Technical Challenges
-
-- Reducing system weight while maintaining strength
-- Improving power efficiency for longer operation times
-- Creating more natural movement patterns
-- Ensuring safety under all operating conditions
-
-*This page is accessible only via direct URL for development and testing purposes.*`,
-  },
-  {
     id: "flybox-redesign",
     title: "FlyBox Redesign",
     description:
       "Senior capstone project redesigning lab equipment used in Nobel Prize-winning circadian rhythm research at Brandeis University",
     image: getProjectImage("flybox-redesign", "hero.jpg"),
     tags: ["Mechanical", "Electrical"],
-    content: `For my senior capstone project, I worked on a team of Olin students in collaboration with Brandeis University to redesign a piece of laboratory equipment called the FlyBox. The FlyBox was designed by Brandeis to monitor and track the behavior of fruit flies over multi-day periods for circadian rhythm research. Using specific lights in the FlyBox, researchers were able to use optogenetics to control individual neurons in the flies' brains and see how their sleep patterns changed. The device was created to replace existing methods of fruit fly behavior observation, offering more detailed and accurate data at a lower cost. Already, the FlyBox has been used to generate data for Nobel Prize-winning research on the circadian rhythm. However, the original version of the FlyBox was just a prototype. It lacked the durability and polish needed for long term use. Furthermore, Brandeis wished for the FlyBox to be created from a simple open source kit, able to be assembled by anybody. In a kit form, the FlyBox could be shared and used by partner institutions around the world. The goal of this project was to redesign the FlyBox from a functional prototype into a polished product that was more robust, able to be assembled from a kit, and be user friendly.
+    content: `For my senior capstone project, I worked on a team of Olin students in collaboration with Brandeis University to redesign a piece of laboratory equipment called the FlyBox. The FlyBox was designed by Brandeis to monitor and track the behavior of fruit flies over multi-day periods for circadian rhythm research. Using specific lights in the FlyBox, researchers were able to use optogenetics to control individual neurons in the flies' brains and see how their sleep patterns changed. The device was created to replace existing methods of fruit fly behavior observation, offering more detailed and accurate data at a lower cost. Already, the FlyBox has been used to generate data for Nobel Prize-winning research on the circadian rhythm. However, the original version of the FlyBox was just a prototype. It lacked the durability and polish needed for long term use. Furthermore, Brandeis wished for the FlyBox to be created from a simple open source kit, able to be assembled by anybody. In a kit form, the FlyBox could be shared and used by partner institutions around the world. The goal of this project was to redesign the FlyBox from a functional prototype into a polished product that was more robust, able to be assembled from a kit, and be user-friendly.
 
 <div class="image-row">
   <img src="/files/projects/flybox-redesign/FirstFlyBox.jpeg" alt="Original FlyBox" />
@@ -120,7 +82,7 @@ Check out the following links to see more about this project as well as the part
 
 - [FlyBox Github Repo](https://github.com/ctallum/FlyBox)
 - [Our Olin College SCOPE project page](https://www.olin.edu/research/brandeis-university-rosbash-lab)
-- [Brandeis Rosbash Lab](http://www.bio.brandeis.edu/rosbash-lab/index.php/research/)`,
+- [Brandeis Rosbash Lab](https://www.brandeis.edu/biology/faculty/rosbash-michael.html)`,
     videoUrl: "https://www.youtube.com/embed/nXNCLWPsdFo",
   },
   {
@@ -131,11 +93,11 @@ Check out the following links to see more about this project as well as the part
     image: getProjectImage("autonomous-submersible-rov", "hero.jpg"),
     imagePosition: "center bottom",
     tags: ["Robotics", "Software", "Computer Vision"],
-    content: `During the summer of 2021, I got the privilege of working for the Applied Physics Laboratory at the University of Washington. Our project was to take 2 commercially available underwater drones (Remotely Operated Vehicles or ROVs) and see if they may be usable for use in further research applications. To demonstrate this, we were given the task of making one ROV follow the other around autonomously utilizing OpenCV and ROS. We also needed to determine the feasibility of integrating additional sensors into the ROV.
+    content: `During the summer of 2021, I got the privilege of working for the Applied Physics Laboratory at the University of Washington. Our project was to take 2 commercially available underwater drones (Remotely Operated Vehicles or ROVs) and see if they could serve as platforms for further research applications. To demonstrate this, we were given the task of making one ROV follow the other around autonomously utilizing OpenCV and ROS. We also needed to determine the feasibility of integrating additional sensors into the ROV.
 
 <img src="/files/projects/autonomous-submersible-rov/BlueROV2.jpg" alt="BlueROV2" style="float: left; width: 45%; margin: 0 1.5rem 1rem 0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
-One of the bigger obstacles for me to overcome was that I had very minimal experience working with OpenCV and ROS. During the duration of this internship I would learn and become much more comfortable with both software packages. One of the largest parts of this project was reverse engineering and understanding the preexisting architecture of the ROV enough to be able to integrate our own control code and external sensors into it. Additionally, this was a brand new project for the lab. None of our mentors or other interns had any previous experience with working with these ROVs, so a lot of the project was just figuring out the necessary knowledge to get to our final goal.
+One of the bigger obstacles for me to overcome was that I had minimal experience working with OpenCV and ROS. During the duration of this internship I would learn and become much more comfortable with both software packages. One of the largest parts of this project was reverse engineering and understanding the preexisting architecture of the ROV enough to be able to integrate our own control code and external sensors into it. Additionally, this was a brand new project for the lab. None of our mentors or other interns had any previous experience with working with these ROVs, so a lot of the project was just figuring out the necessary knowledge to get to our final goal.
 
 <div style="clear: both;"></div>
 
@@ -149,7 +111,7 @@ The key feature of this new interface was that it implemented an autonomous mode
 
 In the end, we managed to show off a demonstration of one of the ROVs autonomously following the other around! We also determined that the ROV would be a good platform for further research applications. It is fairly compact and customizable and can also handle integration with additional sensors. This, combined with the onboard Raspberry Pi, make the BlueROV2 a pretty attractive option for tether-less applications. It is also quite easy to integrate our own custom control code so the range of potential applications is quite large.
 
-There was a lot more to this project than what I can quickly talk about here. This includes the initial building of the ROVs, troubleshooting hardware issues, the intern team's journey through learning ROS, the hardware and software integration of a stereo camera, tons of testing, and so much more. To read the full report, which goes much more in detail, checkout our [Summer Interns Report: BlueROV Team.](https://depts.washington.edu/uwaplopal/post/2021-08-31-bluerov-summer-interns-report.html)
+There was a lot more to this project than what I can quickly talk about here. This includes the initial building of the ROVs, troubleshooting hardware issues, the intern team's journey through learning ROS, the hardware and software integration of a stereo camera, tons of testing, and so much more. To read the full report, which goes much more in detail, check out our [Summer Interns Report: BlueROV Team.](https://depts.washington.edu/uwaplopal/post/2021-08-31-bluerov-summer-interns-report.html)
 
 The video below was shot during our final demonstration. The ROV with the fiducial marker is being manually controlled while the other ROV is autonomously controlled.
 
@@ -235,7 +197,7 @@ One thing to note is that, to avoid conflict, the arbiter also contained a state
       "Real Steel inspired Rock'em Sock'em robots controlled by mimicking human poses",
     image: getProjectImage("shadow-boxing-robot", "hero.jpg"),
     tags: ["Mechanical"],
-    content: `This project was for my Principles of Engineering course. We had a bit over a month to put together a project that involved non trivial mechanical, software, and electrical components. My group took some inspiration from the movie Real Steel and decided we wanted to make a more advanced version of Rock'em Sock'em robots. We wanted both robots to be able to be controlled through mimicking the pose of a human controller as depicted in one of the pivotal moments of the movie.
+    content: `This project was for my Principles of Engineering course. We had a bit over a month to put together a project that involved non-trivial mechanical, software, and electrical components. My group took some inspiration from the movie Real Steel and decided we wanted to make a more advanced version of Rock'em Sock'em robots. We wanted both robots to be able to be controlled through mimicking the pose of a human controller as depicted in one of the pivotal moments of the movie.
 
 For this project I worked mainly on the CAD and fabrication of select mechanical aspects of the robot. All the final CAD was done in OnShape. I worked the most on the swashplate that acted as a hip joint allowing the robot to lean forwards/backwards and side to side. The pan and roll motors were each driven independently and the mechanisms were designed to not interfere with each other. This meant you could operate them both at the same time and have a wider range of motion.
 
@@ -262,7 +224,7 @@ I also worked on creating the 2 degree of freedom shoulder joint. For this, one 
 
 This was my final project for my Software Design class. My group and I decided that we wanted to make a project on simulating the spread of forest fires using a cellular automaton model. We wanted the project to be able to factor in real world data on topography, wind speed and wind direction for a specific area and time. We chose Yosemite Valley and the surrounding area as the main area for our program so we could theoretically use a past fire (i.e. the 2018 Ferguson Fire) to check the accuracy of our final project.
 
-My group broke the overall program into three main areas: the actual simulation, the topography data, and the wind related data. I initially worked with another one of my group mates on getting a very basic simulation running without any external data and figuring out what data structures and other elements we would need to use. While my group mate continued to work on the simulation and refine it to be as accurate as he could, I moved onto attempting to get and integrate the topography data.
+My group broke the overall program into three main areas: the actual simulation, the topography data, and the wind related data. I initially worked with another one of my groupmates on getting a very basic simulation running without any external data and figuring out what data structures and other elements we would need to use. While my groupmate continued to work on the simulation and refine it to be as accurate as he could, I moved onto attempting to get and integrate the topography data.
 
 <div style="clear: both;"></div>
 
@@ -306,7 +268,7 @@ From there, I could use various equations to compute the velocity of the left an
     tags: ["Mechanical"],
     content: `<img src="/files/projects/kinetic-train-sculpture/hero.jpg" alt="Kinetic Train Sculpture" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
-This project was a group project for my Introduction to Mechanical Prototyping class. We were given the project to create a kinetic sculpture that had something to do with the Victorian era. Now, what's the first thing that pops into your head when you think of the Victorian era? Trains right? Well maybe not but, that is what we wanted our structure to be. Additionally, the sculpture had to contain specific mechanical elements (i.e. a belt, a chain, 10+ sheet metal/acrylic parts, a cam/cam follower, a 4-bar linkage, 2 gear transmissions, etc.).
+This project was a group project for my Introduction to Mechanical Prototyping class. We were given the project to create a kinetic sculpture that had something to do with the Victorian era. Now, what's the first thing that pops into your head when you think of the Victorian era? Trains, right? Well maybe not but, that is what we wanted our structure to be. Additionally, the sculpture had to contain specific mechanical elements (i.e. a belt, a chain, 10+ sheet metal/acrylic parts, a cam/cam follower, a 4-bar linkage, 2 gear transmissions, etc.).
 
 I worked mostly on the base for the train to sit on. The idea the group came up with was to have all the internal mechanisms for the train be driven through the wheels of the train. What this entailed was that the train would be resting on 2 "rails" (belts) that were driven by a motor. From there, the wheels would be driven by the rotating belts, turning a shaft inside the train and driving all the other elements of the sculpture.
 

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 const About = () => {
+  document.title = "Florian Schwarzinger - Robotics Engineer";
   const skillCategories = [
     {
       title: "Programming",
@@ -44,7 +45,7 @@ const About = () => {
     >
       {/* Name & Title */}
       <div className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 text-foreground whitespace-nowrap">
+        <h1 className="text-4xl md:text-5xl font-bold mb-2 text-foreground">
           Florian Schwarzinger
         </h1>
         <h2 className="text-xl md:text-2xl text-primary">
@@ -74,7 +75,7 @@ const About = () => {
               <img
                 src={getProfileImage("about-hero.jpg")}
                 alt="Florian Schwarzinger"
-                loading="lazy"
+                loading="eager"
                 className="w-full h-auto object-cover object-center"
               />
             </div>

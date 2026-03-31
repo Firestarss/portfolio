@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
@@ -7,6 +7,7 @@ import { Project, projects } from "../data/projects";
 import { Input } from "@/components/ui/input";
 
 const Projects = () => {
+  document.title = "Projects | Florian Schwarzinger";
   const navigate = useNavigate();
   // Filter out projects that shouldn't be shown on the Projects page
   const visibleProjects = projects.filter(p => p.showInProjects !== false);
@@ -49,11 +50,16 @@ const Projects = () => {
     setIsAnimating(true);  // Trigger fade out
   };
 
-  const handleSearch = (query: string) => {
+  const searchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
-    setPendingSearch(query);
-    setIsAnimating(true);
-  };
+    if (searchTimerRef.current) clearTimeout(searchTimerRef.current);
+    searchTimerRef.current = setTimeout(() => {
+      setPendingSearch(query);
+      setIsAnimating(true);
+    }, 250);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -152,7 +158,7 @@ const Projects = () => {
       >
         {!isAnimating && (
           <motion.div
-            key={activeTag || "all"}
+            key={`${activeTag || "all"}-${pendingSearch}`}
             variants={containerVariants}
             initial="hidden"
             animate="visible"

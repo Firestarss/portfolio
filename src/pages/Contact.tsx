@@ -8,6 +8,7 @@ import { fadeInAnimation } from "@/lib/utils";
 import { getProfileImage } from "@/lib/files";
 
 const Contact = () => {
+  document.title = "Contact | Florian Schwarzinger";
   const [formSuccess, setFormSuccess] = useState(false);
   const resumeUrl = `${import.meta.env.BASE_URL}resume-florian-schwarzinger.pdf`;
 

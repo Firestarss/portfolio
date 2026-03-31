@@ -44,7 +44,10 @@ const ProjectDetail = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+    if (project) {
+      document.title = `${project.title} | Florian Schwarzinger`;
+    }
+  }, [id, project]);
 
   const handleScroll = useCallback(() => {
     const scrolledToBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;

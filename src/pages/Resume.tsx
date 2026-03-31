@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { fadeInAnimation } from "@/lib/utils";
 
 const Resume = () => {
+  document.title = "Resume | Florian Schwarzinger";
   const resumeUrl = `${import.meta.env.BASE_URL}resume-florian-schwarzinger.pdf`;
 
   return (
