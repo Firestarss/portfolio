@@ -302,6 +302,7 @@ From there, I could use various equations to compute the velocity of the left an
     description:
       "Victorian-era kinetic sculpture with belt drives, gear transmissions, and cam mechanisms",
     image: getProjectImage("kinetic-train-sculpture", "hero.jpg"),
+    imagePosition: "center 40%",
     tags: ["Mechanical"],
     content: `<img src="/files/projects/kinetic-train-sculpture/hero.jpg" alt="Kinetic Train Sculpture" style="float: right; width: 40%; margin: 0 0 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);" />
 
