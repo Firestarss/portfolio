@@ -42,9 +42,9 @@ const About = () => {
             </div>
           </div>
           <div className="relative h-64 md:h-80 bg-muted rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
-            <img 
+            <img
               src={getProfileImage("about-hero.jpg")}
-              alt="Robotics engineering workspace with advanced robotic systems and equipment" 
+              alt="Robotics engineering workspace with advanced robotic systems and equipment"
               loading="lazy"
               className="w-full h-full object-cover object-center"
             />
@@ -55,18 +55,13 @@ const About = () => {
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6 inline-block border-b-2 border-primary pb-2">About Me</h2>
         <p className="text-muted-foreground mb-4 leading-relaxed">
-          I'm a Robotics Engineer passionate about building intelligent systems that bridge the gap between mechanical
-          function and software-driven autonomy. With a background in both engineering and applied research, I specialize
-          in designing, programming, and integrating advanced robotic platforms for real-world applications.
-        </p>
-        <p className="text-muted-foreground mb-4 leading-relaxed">
-          I'm a Robotics Engineer and Olin College of Engineering graduate passionate about building intelligent systems
-          that bridge mechanical design and software-driven autonomy. I thrive when working across the full electro-mechanical
-          stack of a robot—especially during the early-stage prototyping and design phase. With a history of developing mobile robotic systems, I have a deep interest in subsea and underwater robotics, where complexity and creativity go hand in hand.
-        </p>
-        <p className="text-muted-foreground leading-relaxed">
-          During my free time, you can usually find me spinning fire, playing video games with friends, training in
-          Brazilian Jiu-Jitsu, or working behind the scenes in technical theater.
+          Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
+          robotics is that it touches a little bit of everything (mechanical, electrical, software) and I like to be
+          involved in all of it. I've worked on everything from autonomous underwater drones to scientific lab
+          equiptment and forest fire simulations and I'm happiest when I'm designing something in CAD, writing the
+          code to make it work, and figuring out why it doesn't do what it's supposed to yet. When I'm not engineering
+          things, you can usually find me spinning fire, training BJJ, playing video games with friends, or doing
+          something behind the scenes in technical theater. Take a look around and check out some of my projects!
         </p>
       </section>
 
