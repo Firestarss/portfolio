@@ -318,3 +318,14 @@
   margin: 0 !important;
   display: block;
 }
+
+/* Invisible ink easter egg */
+.invisible-ink {
+  color: hsl(240 10% 3.9%);
+  transition: color 2s ease;
+}
+
+.invisible-ink:hover,
+.invisible-ink.revealed {
+  color: hsl(240 5% 18%);
+}

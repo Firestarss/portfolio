@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Youtube, FileText, Images, CircuitBoard, Home, FolderOpen, Download } from "lucide-react";
 import { motion } from "framer-motion";
@@ -45,6 +45,18 @@ const ProjectDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  const handleScroll = useCallback(() => {
+    const scrolledToBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
+    if (scrolledToBottom) {
+      document.querySelectorAll('.invisible-ink').forEach(el => el.classList.add('revealed'));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   if (!project) {
     return (
@@ -183,11 +195,11 @@ const ProjectDetail = () => {
 
       {/* Project Description */}
       <div className="mb-12">
-        {project.showInProjects !== false && (
+        {(project.contentLabel === undefined || project.contentLabel !== "") && (
           <>
             <h2 className="text-2xl font-semibold mb-2 flex items-center">
               <FileText className="text-primary mr-2" size={28} />
-              Project Description
+              {project.contentLabel || "Project Description"}
             </h2>
             <Separator className="mb-6" />
           </>

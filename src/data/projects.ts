@@ -10,6 +10,7 @@ export interface Project {
 
   // Main story content (markdown) - the heart of the page
   content: string;
+  contentLabel?: string; // Override "Project Description" header (use "" to hide it entirely)
 
   // Optional elements
   gallery?: { src: string; alt: string }[];
@@ -38,6 +39,7 @@ export const projects: Project[] = [
     showInTerminal: true,
     showInRandomCommand: false,
     showInRandomButton: false,
+    contentLabel: "",
     content: `Well, you found the secret page. Nice work. Since you went through the trouble, here's a look at what I've got cooking.
 
 ## Rubik's Cube World Record Attempt
@@ -56,7 +58,7 @@ Ok this one needs some context. I have a stuffed animal goat named Atlas. He has
 
 That's the backlog for now. If any of these end up becoming real projects, they'll make their way to the main page. Until then, consider yourself briefed.
 
-<p style="margin-top: 6rem; text-align: center; font-size: 0.55rem; color: hsl(240 5% 12%); font-family: monospace; user-select: none;">Created by Florian Schwarzinger</p>`,
+<p class="invisible-ink" style="margin-top: 6rem; text-align: center; font-size: 0.55rem; font-family: monospace; user-select: none;">Created by Florian Schwarzinger</p>`,
   },
   {
     id: "wip-exoskeleton-v2",
