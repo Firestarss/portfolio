@@ -42,20 +42,20 @@ const About = () => {
       className="max-w-4xl mx-auto"
     >
       <section className="mb-12 text-center">
-        <div className="relative h-64 md:h-80 w-64 md:w-80 mx-auto mb-8 bg-muted rounded-full overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
-          <img
-            src={getProfileImage("about-hero.jpg")}
-            alt="Florian Schwarzinger"
-            loading="lazy"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-2 text-foreground whitespace-nowrap">
           Florian Schwarzinger
         </h1>
         <h2 className="text-xl md:text-2xl text-primary mb-8">
           Robotics Engineer
         </h2>
+        <div className="relative max-w-2xl mx-auto mb-8 bg-muted rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)]">
+          <img
+            src={getProfileImage("about-hero.jpg")}
+            alt="Florian Schwarzinger"
+            loading="lazy"
+            className="w-full h-auto object-cover object-center"
+          />
+        </div>
         <div className="space-y-4 mb-8 max-w-2xl mx-auto text-left">
           <p className="text-muted-foreground leading-relaxed">
             Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
