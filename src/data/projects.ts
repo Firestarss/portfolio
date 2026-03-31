@@ -29,36 +29,32 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "terminal-secret",
-    title: "The Hidden Project",
+    title: "What's Next?",
     description:
-      "A secret experimental project exploring advanced AI-driven motion planning. Only accessible via the terminal interface.",
-    image: getProjectImage("autonomous-navigation", "visualization.jpg"),
-    tags: ["AI/ML", "Motion Planning", "Experimental"],
+      "You found a secret. Here's a peek at what's on the workbench.",
+    image: getProjectImage("2x2-cube-solving-robot", "hero.png"),
+    tags: ["Coming Soon"],
     showInProjects: false,
     showInTerminal: true,
     showInRandomCommand: false,
-    showInRandomButton: true,
-    content: `# The Hidden Project
+    showInRandomButton: false,
+    content: `Well, you found the secret page. Nice work. Since you went through the trouble, here's a look at what I've got cooking.
 
-Congratulations! You found the secret project accessible only through the terminal.
+## Rubik's Cube World Record Attempt
 
-## What is this?
+Remember that cube solving robot from the hackathon? I'm revisiting it, but this time the goal is a Guinness World Record. The original solving algorithm was functional but far from optimized. I've since rewritten the solver from scratch in Rust and the performance gains are significant. Right now I'm deep in the hardware design and working through the integration and build steps. There's a lot of mechanical precision required to hit the speeds I'm targeting, so this one is going to take a while, but I'm committed to seeing it through.
 
-This is an experimental project exploring advanced AI-driven motion planning algorithms. The work here is cutting-edge and still under active research, which is why it's kept hidden from the main projects page.
+## LED Totem / Antenna
 
-## Key Research Areas
+This one is a bit of a weird crossover. I want to build an LED totem (think festival light fixture vibes) that doubles as a VHF/UHF antenna and potentially a battery powered ham radio repeater. When it's not out in the field, it would hang on my wall as a piece of LED art. I like the idea of something that looks purely decorative but is secretly a fully functional piece of radio infrastructure.
 
-- **Neural Motion Planning**: Using deep learning to predict optimal robot trajectories
-- **Real-time Adaptation**: Systems that adapt to unexpected obstacles using reinforcement learning
-- **Multi-Agent Coordination**: Algorithms for coordinating multiple robots in shared spaces
+## Atlas the Radio Goat
 
-## Why Terminal-Only?
+Ok this one needs some context. I have a stuffed animal goat named Atlas. He has a high strength magnet installed in his stomach so he can ride around on my shoulder, and he already comes with me pretty much everywhere (skiing, fire spinning, festivals, you name it). He even has his own [Instagram](https://www.instagram.com/Atlas_The_Goat). The plan is to embed a ham radio inside of him so I can keep in touch with friends whether we're on the slopes, at a concert, or just wandering around. I think it would be really fun to be talking to what has effectively become my mascot and have him talk back to me with my friends' voices.
 
-This project represents experimental work that's not ready for public showcase but is documented here for reference and testing purposes. The terminal interface provides a more technical, developer-focused way to access this content.
+---
 
-> *"The best way to predict the future is to invent it."* - Alan Kay
-
-Stay curious, and keep exploring!`,
+That's the backlog for now. If any of these end up becoming real projects, they'll make their way to the main page. Until then, consider yourself briefed.`,
   },
   {
     id: "wip-exoskeleton-v2",
