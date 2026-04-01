@@ -19,7 +19,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <AspectRatio ratio={16 / 9} className="bg-muted/20">
           <img
             src={project.image}
-            alt={project.title}
+            alt={`${project.title} preview`}
             loading="lazy"
             style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
             className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"

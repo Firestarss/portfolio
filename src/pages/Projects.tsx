@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 import { Project, projects } from "../data/projects";
 import { Input } from "@/components/ui/input";
+import { fadeInAnimation } from "@/lib/utils";
 
 const Projects = () => {
   document.title = "Projects | Florian Schwarzinger";
@@ -72,7 +73,13 @@ const Projects = () => {
   };
 
   return (
-    <>
+    <motion.main
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={fadeInAnimation}
+      transition={fadeInAnimation.transition}
+    >
       <h1 className="text-3xl md:text-4xl font-bold mb-2">Projects</h1>
       <p className="text-muted-foreground mb-8">
         Explore my work in robotics, automation, and engineering design, or{" "}
@@ -182,7 +189,7 @@ const Projects = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </motion.main>
   );
 };
 

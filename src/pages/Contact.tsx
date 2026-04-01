@@ -16,7 +16,7 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: <Github size={20} />,
-      url: "https://www.github.com/Firestarss",
+      url: "https://github.com/Firestarss",
     },
     {
       name: "LinkedIn",
@@ -92,8 +92,7 @@ const Contact = () => {
                 <a
                   key={link.name}
                   href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(link.url.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                   className="flex items-center p-3 rounded-md border border-border hover:bg-muted/50 transition-colors group"
                 >
                   <span className="mr-3 text-primary">{link.icon}</span>
