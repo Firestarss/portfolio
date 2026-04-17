@@ -81,7 +81,8 @@ const About = () => {
                 src={getProfileImage("about-hero.jpg")}
                 alt="Florian Schwarzinger"
                 loading="eager"
-                className="w-full h-auto object-cover object-center animate-fade-in"
+                className="w-full h-auto object-cover object-center opacity-0 transition-opacity duration-300"
+                onLoad={(e) => e.currentTarget.classList.replace('opacity-0', 'opacity-100')}
               />
             </div>
             <div className="flex space-x-4">
@@ -126,7 +127,8 @@ const About = () => {
                     alt={`${project.title} preview`}
                     loading="lazy"
                     style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
-                    className="object-cover w-full h-48 transition-transform duration-300 group-hover:scale-105 animate-fade-in"
+                    className="object-cover w-full h-48 transition-all duration-300 group-hover:scale-105 opacity-0"
+                    onLoad={(e) => e.currentTarget.classList.replace('opacity-0', 'opacity-100')}
                   />
                 </div>
                 <div className="py-3 px-4 flex flex-col justify-center">

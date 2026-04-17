@@ -21,7 +21,8 @@ const GalleryImage = ({ src, alt }: { src: string; alt: string }) => {
               src={src}
               alt={alt}
               loading="lazy"
-              className="object-cover w-full h-full hover:scale-105 transition-transform duration-200 animate-fade-in"
+              className="object-cover w-full h-full hover:scale-105 transition-all duration-300 opacity-0"
+              onLoad={(e) => e.currentTarget.classList.replace('opacity-0', 'opacity-100')}
             />
           </AspectRatio>
         </div>
@@ -181,7 +182,8 @@ const ProjectDetail = () => {
             src={project.image}
             alt={`${project.title} - Hero image showcasing the project`}
             style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
-            className="object-cover w-full h-full animate-fade-in"
+            className="object-cover w-full h-full opacity-0 transition-opacity duration-300"
+            onLoad={(e) => e.currentTarget.classList.replace('opacity-0', 'opacity-100')}
           />
         </AspectRatio>
       </div>
