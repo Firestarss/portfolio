@@ -93,21 +93,24 @@ const Projects = () => {
       </p>
 
       {/* Search and Filter UI */}
-      <div className="mb-8 space-y-4">
+      <div className="mb-8 flex flex-col md:flex-row items-stretch gap-3 px-4 py-3 rounded-lg border border-border bg-muted/10">
         {/* Search Bar */}
-        <div className="relative max-w-md">
+        <div className="relative md:w-56 flex-shrink-0">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
           <Input
             type="text"
-            placeholder="Search projects..."
+            placeholder="Search..."
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
-            className="pl-10"
+            className="pl-10 h-8 text-sm"
           />
         </div>
 
+        {/* Divider */}
+        <div className="hidden md:block w-px bg-border self-stretch" />
+
         {/* Tag Filters */}
-        <div className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border bg-muted/10">
+        <div className="flex items-center gap-3">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground flex-shrink-0">
             <Filter size={14} />
             Filter:
