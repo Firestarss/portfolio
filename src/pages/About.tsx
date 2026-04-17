@@ -76,12 +76,12 @@ const About = () => {
             </p>
           </div>
           <div className="flex flex-col items-center gap-6">
-            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)] w-full max-w-md">
+            <div className="rounded-lg overflow-hidden shadow-[0_0_0_1px_hsl(40_100%_70%/0.12),0_4px_18px_-3px_hsl(20_100%_50%/0.18)] w-full max-w-md bg-muted/20">
               <img
                 src={getProfileImage("about-hero.jpg")}
                 alt="Florian Schwarzinger"
                 loading="eager"
-                className="w-full h-auto object-cover object-center"
+                className="w-full h-auto object-cover object-center animate-fade-in"
               />
             </div>
             <div className="flex space-x-4">
@@ -120,13 +120,13 @@ const About = () => {
                 to={`/projects/${project.id}`}
                 className="group flex flex-col sm:flex-row rounded-lg border border-border overflow-hidden hover:border-primary/100 hover:shadow-md hover:shadow-primary/20 transition-all duration-300"
               >
-                <div className="sm:w-64 sm:min-w-64 sm:h-48 flex-shrink-0 overflow-hidden">
+                <div className="sm:w-64 sm:min-w-64 sm:h-48 flex-shrink-0 overflow-hidden bg-muted/20">
                   <img
                     src={project.image}
                     alt={`${project.title} preview`}
                     loading="lazy"
                     style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
-                    className="object-cover w-full h-48 transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover w-full h-48 transition-transform duration-300 group-hover:scale-105 animate-fade-in"
                   />
                 </div>
                 <div className="py-3 px-4 flex flex-col justify-center">
