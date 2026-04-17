@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { getProfileImage } from "@/lib/files";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { ArrowRight } from "lucide-react";
+import { projects } from "@/data/projects";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const About = () => {
   document.title = "Florian Schwarzinger | Portfolio";
@@ -92,6 +95,55 @@ const About = () => {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <Separator className="mb-12" />
+
+      {/* Featured Projects */}
+      <section className="mb-12">
+        <div className="flex items-baseline justify-between mb-8">
+          <h2 className="text-2xl font-bold inline-block border-b-2 border-primary pb-2">Featured Projects</h2>
+          <Link to="/projects" className="text-base text-primary hover:underline flex items-center gap-1.5 font-medium">
+            View all projects <ArrowRight size={18} />
+          </Link>
+        </div>
+        <div className="flex flex-col gap-4">
+          {["autonomous-submersible-rov", "flybox-redesign"].map((id) => {
+            const project = projects.find((p) => p.id === id);
+            if (!project) return null;
+            return (
+              <Link
+                key={project.id}
+                to={`/projects/${project.id}`}
+                className="group flex flex-col sm:flex-row rounded-lg border border-border overflow-hidden hover:border-primary/100 hover:shadow-md hover:shadow-primary/20 transition-all duration-300"
+              >
+                <div className="sm:w-64 sm:min-w-64 sm:h-48 flex-shrink-0 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    loading="lazy"
+                    style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+                    className="object-cover w-full h-48 transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="py-3 px-4 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{project.title}</h3>
+                    <ArrowRight size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">{project.description}</p>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-0.5 text-xs bg-primary/10 text-muted-foreground rounded-full border border-primary/20">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

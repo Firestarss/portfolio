@@ -176,7 +176,7 @@ const ProjectDetail = () => {
 
       {/* Hero Image */}
       <div className="mb-12 rounded-lg overflow-hidden shadow-xl">
-        <AspectRatio ratio={16 / 9}>
+        <AspectRatio ratio={4 / 3}>
           <img
             src={project.image}
             alt={`${project.title} - Hero image showcasing the project`}

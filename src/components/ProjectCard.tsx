@@ -16,7 +16,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       className="group bg-muted/5 border border-border rounded-lg overflow-hidden hover:border-primary/100 hover:shadow-md hover:shadow-primary/20 transition-all duration-300 focus-within:border-primary/70 flex flex-col h-full"
     >
       <Link to={`/projects/${project.id}`} className="block focus:outline-none flex flex-col h-full">
-      <AspectRatio ratio={16 / 9} className="bg-muted/20">
+      <AspectRatio ratio={4 / 3} className="bg-muted/20">
           <img
             src={project.image}
             alt={`${project.title} preview`}
