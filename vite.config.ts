@@ -4,13 +4,13 @@ import path from "path";
 import { execSync } from "child_process";
 
 const commitHash = execSync("git rev-parse --short HEAD").toString().trim();
-const buildDate = new Date().toISOString().split("T")[0];
+const commitDate = execSync("git log -1 --format=%ci").toString().trim();
 
 export default defineConfig({
   base: "/",
   define: {
     __COMMIT_HASH__: JSON.stringify(commitHash),
-    __BUILD_DATE__: JSON.stringify(buildDate),
+    __COMMIT_DATE__: JSON.stringify(commitDate),
   },
   server: {
     host: "::",

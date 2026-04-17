@@ -131,7 +131,7 @@ const Terminal = () => {
       navigate("/resume");
       return "Navigating to Resume page...";
     } else if (lowercaseCmd === "version") {
-      return `Build: ${__COMMIT_HASH__} (${__BUILD_DATE__})`;
+      return `Build: ${__COMMIT_HASH__} (${__COMMIT_DATE__})`;
     } else if (lowercaseCmd === "clear") {
       return "__CLEAR__";
     } else if (lowercaseCmd === "exit") {
