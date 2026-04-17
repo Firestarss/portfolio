@@ -61,11 +61,9 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <p className="text-muted-foreground leading-relaxed">
-              Hey! I'm Florian, a robotics engineer and Olin College graduate. One of the things I enjoy most about
+              Hey! I'm Florian. I currently work as an SDET at Pickle Robot Company, where I build automation test infrastructure and develop tools for both hardware and software testing. One of the things I enjoy most about
               robotics is that it touches a little bit of everything (mechanical, electrical, software) and I like to be
-              involved in all of it. I've worked on everything from autonomous underwater drones to scientific lab
-              equipment and forest fire simulations, and I'm happiest when I'm designing something in CAD, writing the
-              code to make it work, and figuring out why it doesn't do what it's supposed to yet.
+              involved in all of it.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               When I'm not engineering things, you can usually find me spinning fire, training BJJ, playing video
