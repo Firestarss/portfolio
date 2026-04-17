@@ -98,6 +98,7 @@ const Terminal = () => {
         "sub-projects": "Navigate to a specific project (numbered list)",
         contact: "Go to contact page",
         resume: "View resume",
+        version: "Show build version",
         clear: "Clear terminal",
         exit: "Close terminal",
       };
@@ -129,6 +130,8 @@ const Terminal = () => {
     } else if (lowercaseCmd === "resume") {
       navigate("/resume");
       return "Navigating to Resume page...";
+    } else if (lowercaseCmd === "version") {
+      return `Build: ${__COMMIT_HASH__} (${__BUILD_DATE__})`;
     } else if (lowercaseCmd === "clear") {
       return "__CLEAR__";
     } else if (lowercaseCmd === "exit") {
@@ -145,7 +148,7 @@ const Terminal = () => {
       return;
     }
 
-    const commands = ["help", "about", "projects", "sub-projects", "contact", "resume", "clear", "exit"];
+    const commands = ["help", "about", "projects", "sub-projects", "contact", "resume", "version", "clear", "exit"];
     const trimmedInput = input.trim().toLowerCase();
 
     if (!trimmedInput) return;
