@@ -13,7 +13,7 @@ const About = () => {
   const skillCategories = [
     {
       title: "Programming",
-      items: ["Linux", "C++", "Python", "Rust", "GitHub / GitLab", "Java", "OpenCV", "ROS", "Arduino", "MATLAB"],
+      items: ["Linux", "C++", "Python", "Rust", "Java", "OpenCV", "ROS", "Arduino", "MATLAB"],
     },
     {
       title: "Machining",
@@ -34,6 +34,10 @@ const About = () => {
     {
       title: "Software",
       items: ["SOLIDWORKS", "OnShape", "Jira", "TestRails", "Microsoft Office Suite", "Adobe Creative Cloud"],
+    },
+    {
+      title: "Infrastructure",
+      items: ["Docker", "Kubernetes", "Jenkins", "Terraform", "Helm", "GitHub / GitLab"],
     },
   ] as const;
 
