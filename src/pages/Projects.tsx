@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Search } from "lucide-react";
+import { Search, Filter } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 import { Project, projects } from "../data/projects";
 import { Input } from "@/components/ui/input";
@@ -108,28 +108,28 @@ const Projects = () => {
 
         {/* Tag Filters */}
         <div>
-          <div className="mb-2 flex items-center">
-            <h2 className="text-lg font-medium mr-4">Filter by tag:</h2>
-            {(activeTag || searchQuery) && (
-              <button onClick={clearFilter} className="text-sm text-primary hover:underline">
-                Clear all filters
-              </button>
-            )}
-          </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className={`inline-flex items-center gap-1.5 px-3 py-1 text-sm rounded-full border transition-colors ${activeTag ? "bg-primary/10 border-primary text-primary" : "border-border text-muted-foreground"}`}>
+              <Filter size={14} />
+            </span>
             {allTags.map(tag => (
               <button
                 key={tag}
                 onClick={() => handleTagFilter(tag)}
-                className={`px-3 py-1 text-sm rounded-full border transition-colors ${
+                className={`px-3 py-1 text-sm rounded-full border transition-colors cursor-pointer ${
                   activeTag === tag
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "border-border hover:bg-muted/60"
+                    ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                    : "border-border bg-muted/20 hover:bg-muted/60 hover:border-primary/40"
                 }`}
               >
                 {tag}
               </button>
             ))}
+            {(activeTag || searchQuery) && (
+              <button onClick={clearFilter} className="px-3 py-1 text-sm text-primary hover:underline">
+                Clear
+              </button>
+            )}
           </div>
         </div>
       </div>
