@@ -107,11 +107,12 @@ const Projects = () => {
         </div>
 
         {/* Tag Filters */}
-        <div>
+        <div className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border bg-muted/10">
+          <span className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground flex-shrink-0">
+            <Filter size={14} />
+            Filter:
+          </span>
           <div className="flex flex-wrap items-center gap-2">
-            <span className={`inline-flex items-center gap-1.5 px-3 py-1 text-sm rounded-full border transition-colors ${activeTag ? "bg-primary/10 border-primary text-primary" : "border-border text-muted-foreground"}`}>
-              <Filter size={14} />
-            </span>
             {allTags.map(tag => (
               <button
                 key={tag}
