@@ -22,7 +22,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             alt={`${project.title} preview`}
             loading="lazy"
             style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
-            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105 animate-fade-in"
           />
         </AspectRatio>
         <div className="p-5 flex flex-col flex-grow">

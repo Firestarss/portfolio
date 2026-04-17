@@ -16,12 +16,12 @@ const GalleryImage = ({ src, alt }: { src: string; alt: string }) => {
     <Dialog>
       <DialogTrigger asChild>
         <div className="cursor-pointer rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
-          <AspectRatio ratio={4 / 3}>
+          <AspectRatio ratio={4 / 3} className="bg-muted/20">
             <img
               src={src}
               alt={alt}
               loading="lazy"
-              className="object-cover w-full h-full hover:scale-105 transition-transform duration-200"
+              className="object-cover w-full h-full hover:scale-105 transition-transform duration-200 animate-fade-in"
             />
           </AspectRatio>
         </div>
@@ -175,13 +175,13 @@ const ProjectDetail = () => {
       <p className="text-xl text-muted-foreground mb-8 leading-relaxed">{project.description}</p>
 
       {/* Hero Image */}
-      <div className="mb-12 rounded-lg overflow-hidden shadow-xl">
+      <div className="mb-12 rounded-lg overflow-hidden shadow-xl bg-muted/20">
         <AspectRatio ratio={4 / 3}>
           <img
             src={project.image}
             alt={`${project.title} - Hero image showcasing the project`}
             style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full animate-fade-in"
           />
         </AspectRatio>
       </div>
