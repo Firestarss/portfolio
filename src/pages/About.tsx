@@ -107,8 +107,8 @@ const About = () => {
       <section className="mb-12">
         <div className="flex items-baseline justify-between mb-8">
           <h2 className="text-2xl font-bold inline-block border-b-2 border-primary pb-2">Featured Projects</h2>
-          <Link to="/projects" className="text-base text-primary hover:underline flex items-center gap-1.5 font-medium">
-            View all projects <ArrowRight size={18} />
+          <Link to="/projects" className="text-sm text-primary hover:underline flex items-center gap-1.5">
+            View all {projects.filter((p) => p.showInProjects !== false).length} projects <ArrowRight size={14} />
           </Link>
         </div>
         <div className="flex flex-col gap-4">
@@ -148,6 +148,13 @@ const About = () => {
               </Link>
             );
           })}
+        </div>
+        <div className="mt-4 text-center">
+          <Button asChild variant="hero-outline" size="lg" className="text-base">
+            <Link to="/projects">
+              Explore All {projects.filter((p) => p.showInProjects !== false).length} Projects <ArrowRight size={18} className="ml-1" />
+            </Link>
+          </Button>
         </div>
       </section>
 
