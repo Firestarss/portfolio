@@ -107,7 +107,7 @@ const About = () => {
       <section className="mb-12">
         <div className="flex items-baseline justify-between mb-8">
           <h2 className="text-2xl font-bold inline-block border-b-2 border-primary pb-2">Featured Projects</h2>
-          <Button asChild variant="hero-outline" size="sm" className="text-sm">
+          <Button asChild variant="hero" size="sm" className="text-sm">
             <Link to="/projects">
               Explore All {projects.filter((p) => p.showInProjects !== false).length} Projects <ArrowRight size={14} className="ml-1" />
             </Link>
