@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Florian Schwarzinger
+N:Schwarzinger;Florian;;;
+TEL;TYPE=CELL:+15303888523
+EMAIL;TYPE=INTERNET:FlorianMSchwarzinger@gmail.com
+BDAY:1998-12-04
+PHOTO;VALUE=URI:https://fschwarzinger.com/files/misc/contact-photo.jpg
+END:VCARD
